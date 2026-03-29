@@ -1,0 +1,1365 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-QXGLSR4QGP"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-QXGLSR4QGP');
+</script>
+
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "Care and Cables",
+  "image": "https://careandcables.ca/logo_og_ref.png",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Scarborough",
+    "addressRegion": "ON",
+    "addressCountry": "CA"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": 43.7764,
+    "longitude": -79.2317
+  },
+  "url": "https://careandcables.ca",
+  "telephone": "+16477282004",
+  "priceRange": "$$"
+}
+</script>
+
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Care and Cables</title>
+  <link rel="icon" href="favicon.png" type="image/png">
+  <link rel="apple-touch-icon" href="favicon.png">
+  <meta name="description" content="Your Setup, Our Mess. Offering practical organizational solutions to any setup.">
+
+  <meta property="og:title" content="Care and Cables">
+  <meta property="og:description" content="Small hardware issues can lead to major data loss. We identify risks before they cost you time and money."> 
+  <meta property="og:image" content="https://careandcables.ca/logo_og_ref.png">
+  <meta property="og:url" content="https://careandcables.ca">
+  <meta property="og:type" content="website">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700;800;900&family=Barlow:wght@300;400;500;600&display=swap" rel="stylesheet" />
+
+  <style>
+
+	/* CSS VARIABLES */
+
+    :root {
+      --blue-deep:    #0f2340;   /* dark blue */
+      --blue-mid:     #1a3a5c;   /* mid blue */
+      --blue-light:   #f2f0ef;   /* off-white */
+
+      --gold:         #c8922a;   /* main accent */
+      --gold-light:   #fff2e1;   /* ivory */
+      --gold-glow:    #e8a83a;   /* bright gold for hover */
+
+      --text-dark:    #2c3e4e;   /* body text on light backgrounds */
+      --text-light:   #ffffff;   /* body text on dark backgrounds */
+      --text-muted:   #5a7a9a;   /* secondary text */
+
+      --red-mid:      #c0392b;   /* red for dropdown */
+
+      --section-padding: 80px 24px;
+      --card-padding:    28px;
+      --border-radius:   8px;
+
+      --font-heading: 'Barlow Condensed', sans-serif;
+      --font-body:    'Barlow', sans-serif;
+
+      --max-width: 1080px;
+    }
+
+	/* BROWSER RESET & BASE */
+
+    *, *::before, *::after {
+      box-sizing: border-box;   
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      /* scroll handled by JS for custom speed */
+    }
+
+    .flash {
+  animation: flash 3s infinite;
+}
+
+    .announcement-banner {
+  background-color: #c49a1a; 
+  color: #fff;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  overflow: hidden;
+  white-space: nowrap;
+  padding: 8px 0;
+  position: fixed;
+  top: 60px; 
+  left: 0;
+  right: 0;
+  z-index: 9998;
+}
+
+.marquee-track {
+  display: flex;
+  animation: marquee 40s linear infinite;
+  will-change: transform;
+}
+
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to   { transform: translateX(var(--marquee-offset)); }
+}
+
+    body {
+      font-family: var(--font-body);
+      color: var(--text-dark);
+      background: var(--blue-light);
+      line-height: 1.6;
+    }
+
+	/* REUSABLE CONTAINER */
+
+    .container {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+	/* NAVIGATION */
+
+    nav {
+      position: fixed;           
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 100;              /* FORCED ON TOP */
+      background: var(--blue-deep);
+      border-bottom: 2px solid var(--gold);
+      padding: 0 24px;
+    }
+
+    .nav-inner {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      display: flex;             
+      align-items: center;       
+      justify-content: space-between; /* PUSHES ITEMS TO EDGES */
+      height: 60px;
+    }
+
+    .nav-logo {
+      font-family: var(--font-heading);
+      font-size: 1.4rem;
+      font-weight: 800;
+      color: var(--text-light);
+      letter-spacing: 0.05em;
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .nav-logo-img {
+      height: 32px;
+      width: auto;
+      display: block;
+    }
+
+    .nav-logo span {
+      color: var(--gold);        
+    }
+	
+    .nav-links {
+      display: flex;
+      gap: 32px;                 
+      list-style: none;
+    }
+
+    .nav-links a {
+      color: var(--text-light);
+      text-decoration: none;
+      font-size: 0.85rem;
+      font-weight: 500;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      opacity: 0.85;
+      transition: opacity 0.2s, color 0.2s; /* SMOOTH HOVER */
+    }
+
+    .nav-links a:hover,
+    .nav-links a.active {
+      opacity: 1;
+      color: var(--gold);
+    }
+
+	/* HERO */ 
+
+    .hero {
+      background: var(--blue-deep);
+      padding: 160px 24px 100px;  
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* BG */
+    .hero::before {
+      content: '';               /* required for ::before/::after to show */
+      position: absolute;
+      bottom: -40px;
+      left: 0;
+      right: 0;
+      height: 80px;
+      background-color: var(--blue-light);
+      transform: skewY(-2deg);
+      z-index: 1;
+    }
+
+    /* HERO BG */
+    .hero::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='60' height='60'%3E%3Cg transform='rotate(45 30 30)'%3E%3Ccircle cx='30' cy='30' r='2' fill='%23c8922a' opacity='0.12'/%3E%3Cline x1='30' y1='0' x2='30' y2='22' stroke='%23c8922a' stroke-width='1' opacity='0.12'/%3E%3Cline x1='30' y1='38' x2='30' y2='60' stroke='%23c8922a' stroke-width='1' opacity='0.12'/%3E%3Cline x1='0' y1='30' x2='22' y2='30' stroke='%23c8922a' stroke-width='1' opacity='0.12'/%3E%3Cline x1='38' y1='30' x2='60' y2='30' stroke='%23c8922a' stroke-width='1' opacity='0.12'/%3E%3C/g%3E%3C/svg%3E");
+      /* Same diamond pattern as services section but in gold at very low opacity
+         sits subtly on the dark blue hero without competing with the text */
+      pointer-events: none;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 1;                
+    }
+
+    /* REVIEWS */
+    .reviews {
+  border-top: 10px solid var(--gold);
+  border-bottom: 10px solid var(--gold);
+  background: var(--blue-deep);
+  padding: 0;
+  overflow: hidden;
+}
+
+.reviews-inner {
+  padding: 32px 0;
+}
+
+.reviews-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 28px;
+}
+
+.reviews-google-logo {
+  display: flex;
+  align-items: center;
+}
+
+.reviews-title {
+  font-family: var(--font-heading);
+  font-size: 1.1rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--text-light);
+}
+
+.reviews-stars {
+  color: var(--gold);
+  font-size: 1rem;
+  letter-spacing: 2px;
+}
+
+.reviews-rating {
+  font-family: var(--font-heading);
+  font-weight: 800;
+  font-size: 1.1rem;
+  color: var(--gold);
+}
+
+.reviews-track-outer {
+  background: #ffffff;
+  padding: 28px 0;
+}
+
+.reviews-track {
+  display: flex;
+  gap: 24px;
+  overflow-x: auto;
+  padding: 0 40px;
+  scrollbar-width: none;
+  justify-content: center;
+}
+
+.reviews-track::-webkit-scrollbar {
+  display: none;
+}
+
+.review-card {
+  background: #ffffff;
+  border: 1px solid rgba(0,0,0,0.08);
+  border-radius: var(--border-radius);
+  padding: 20px 24px;
+  min-width: 280px;
+  max-width: 320px;
+  flex-shrink: 0;
+}
+
+.review-stars {
+  color: #f4b400;
+  font-size: 0.95rem;
+  letter-spacing: 2px;
+  margin-bottom: 10px;
+}
+
+.review-text {
+  font-size: 0.9rem;
+  color: #333;
+  line-height: 1.65;
+  margin-bottom: 12px;
+  font-style: italic;
+}
+
+.review-author {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: #777;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+    .hero-eyebrow {
+      font-size: 0.8rem;
+      font-weight: 600;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 16px;
+    }
+
+    .hero h1 {
+      font-family: var(--font-heading);
+      font-size: clamp(3.5rem, 10vw, 7rem); 
+      font-weight: 900;
+      line-height: 0.95;
+      color: var(--text-light);
+      letter-spacing: -0.01em;
+      text-transform: uppercase;
+      margin-bottom: 24px;
+    }
+
+    /* TITLE ACCENT */
+    .hero h1 em {
+      font-style: normal;
+      color: var(--gold);
+    }
+
+    .hero-tagline {
+      font-size: clamp(1rem, 2.5vw, 1.2rem);
+      color: rgba(255,255,255,0.7);
+      max-width: 680px;
+      margin: 0 auto 40px;
+      font-weight: 300;
+      line-height: 1.7;
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: 16px;
+      justify-content: center;
+      flex-wrap: wrap;           /* MOBILE WRAP */
+    }
+
+	/* BUTTONS */
+
+    .btn {
+      display: inline-block;
+      padding: 14px 32px;
+      border-radius: var(--border-radius);
+      font-family: var(--font-body);
+      font-weight: 600;
+      font-size: 0.9rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      text-decoration: none;
+      cursor: pointer;
+      border: 2px solid transparent;
+      transition: all 0.2s ease;
+    }
+
+    .btn-primary {
+      background: var(--gold);
+      color: var(--text-light);
+      border-color: var(--gold);
+    }
+
+    .btn-primary:hover {
+      background: var(--gold-glow);
+      border-color: var(--gold-glow);
+      transform: translateY(-2px);       /* LIFT */
+      box-shadow: 0 8px 24px rgba(200,146,42,0.35);
+    }
+
+    .btn-outline {
+      background: transparent;
+      color: var(--text-light);
+      border-color: rgba(255,255,255,0.4);
+    }
+
+    .btn-outline:hover {
+      border-color: var(--text-light);
+      transform: translateY(-2px);
+    }
+
+	/* SECTION STYLES */
+
+    section {
+      padding: var(--section-padding);
+    }
+
+    .section-label {
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 8px;
+    }
+
+    .section-title {
+      font-family: var(--font-heading);
+      font-size: clamp(2rem, 5vw, 3rem);
+      font-weight: 800;
+      line-height: 1.05;
+      text-transform: uppercase;
+      margin-bottom: 16px;
+    }
+
+    .section-title.light {
+      color: var(--text-light);
+    }
+
+    .section-desc {
+      font-size: 1rem;
+      color: var(--text-muted);
+      max-width: 780px;
+      line-height: 1.7;
+      margin-bottom: 48px;
+    }
+
+    .section-desc.light {
+      color: rgba(255,255,255,0.65);
+    }
+
+	/* SHOWCASE */
+
+	.showcase {
+  	  background-color: var(--blue-light);
+	  border-top: 10px solid var(--gold);
+	  border-bottom: 10px solid var(--gold);
+  	  padding: 80px 320px;
+  	  min-height: 400px;
+
+	}
+
+	.showcase img {
+  	  width: 300px;
+  	  height: 300px;
+  	  object-fit: cover;
+  	  border-radius: var(--border-radius);
+	  display: block;
+	  margin: 0 auto;
+
+	}
+
+	
+    	/* CONTACT SECTION */
+
+    .contact {
+      background: var(--blue-mid);
+      position: relative;
+    }
+
+    .contact-bg {
+      pointer-events: none;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 100%;
+      opacity: 0.06;
+      z-index: 0;
+    }
+
+    .contact-grid {
+      
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      position: relative;
+      z-index: 1;
+      align-items: start;
+    }
+
+    .contact-info h3 {
+      font-family: var(--font-heading);
+      font-size: 1.1rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--gold);
+      margin-bottom: 8px;
+      margin-top: 28px;
+      transition: text-shadow 0.2s ease;
+    }
+
+    .contact-info h3:hover {
+      text-shadow: 0 0 16px rgba(200,146,42,0.65);
+    }
+
+    .contact-info p:not(.section-desc), .contact-info a {
+      color: var(--gold-glow);
+      font-size: 0.95rem;
+      text-decoration: none;
+      line-height: 1.7;
+      display: block;
+      transition: text-shadow 0.2s ease, color 0.2s ease;
+    }
+
+    .contact-info p:not(.section-desc):hover, .contact-info a:hover {
+      color: var(--gold);
+      text-shadow: 0 0 16px rgba(255,255,255,0.3);
+    }
+
+    .section-desc.light {
+      color: rgba(255,255,255,0.65);
+    }
+
+    .contact-info h3:first-of-type {
+      margin-top: 0;
+    }
+
+	/* FORM STYLES */
+
+    .contact-form {
+      display: flex;
+      flex-direction: column;    
+      gap: 16px;
+    }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    label {
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.6);
+    }
+
+    input, select, textarea {
+      background: rgba(255,255,255,0.07);
+      border: 1px solid rgba(255,255,255,0.15);
+      border-radius: var(--border-radius);
+      padding: 12px 16px;
+      color: var(--text-light);
+      font-family: var(--font-body);
+      font-size: 0.95rem;
+      outline: none;
+      transition: border-color 0.2s, background 0.2s;
+      width: 100%;
+    }
+
+    input::placeholder, textarea::placeholder {
+      color: rgba(255,255,255,0.3);
+    }
+
+    /* The blue glow when a field is active/focused */
+    input:focus, select:focus, textarea:focus {
+      border-color: var(--gold);
+      background: rgba(255,255,255,0.1);
+      box-shadow: 0 0 0 3px rgba(200,146,42,0.15);
+    }
+
+    select option {
+      background: var(--blue-mid);
+      color: var(--text-light);
+    }
+
+    textarea {
+      resize: vertical;          
+      min-height: 120px;
+    }
+
+    .form-submit {
+      padding-top: 8px;
+    }
+
+	/* VALUES SECTION */
+
+    .values {
+      background: var(--blue-deep);
+      position: relative;
+      overflow: hidden;
+    }
+
+	/* DECORATION */
+
+    .values::before {
+      content: '';
+      position: absolute;
+      right: -120px;
+      top: -120px;
+      width: 480px;
+      height: 480px;
+      border-radius: 50%;           /* 50% = CIRCLE */
+      border: 60px solid rgba(200,146,42,0.06);
+      pointer-events: none;
+    }
+
+    .values-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: start;
+      position: relative;
+      z-index: 1;                   
+    }
+
+    .values-text p {
+      color: rgba(240,240,240,0.85);
+      font-size: 1.05rem;
+      line-height: 1.85;
+      margin-bottom: 20px;
+    }
+
+    .valuest-text p:last-child {
+      margin-bottom: 0;
+    }
+
+    .values-pillars {
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+      padding-top: 166px;
+    }
+
+    .pillar {
+      display: flex;
+      gap: 20px;
+      align-items: flex-start;
+    }
+
+    .pillar-icon {
+      font-size: 1.5rem;
+      width: 48px;
+      height: 48px;
+      background: rgba(200,146,42,0.12);
+      border: 1px solid rgba(200,146,42,0.25);
+      border-radius: var(--border-radius);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;              /* PREVENTS SQUISHING */
+    }
+
+    .pillar-text h4 {
+      font-family: var(--font-heading);
+      font-size: 1rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--text-light);
+      margin-bottom: 4px;
+    }
+
+    .pillar-text p {
+      font-size: 0.875rem;
+      color: rgba(240,240,240,0.70);
+      line-height: 1.6;
+    }
+
+    /* SERVICE AREA BADGE */
+    .area-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(200,146,42,0.12);
+      border: 1px solid rgba(200,146,42,0.3);
+      border-radius: 100px;        /* ACHIEVES PILL */
+      padding: 8px 18px;
+      font-size: 0.82rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 28px;
+    }
+
+    @media (max-width: 768px) {
+      .values-grid {
+        grid-template-columns: 1fr;
+        gap: 48px;
+      }
+
+      .reviews-track {
+        justify-content: flex-start;
+      }
+
+      .review-card {
+        min-width: 260px;
+        max-width: 80vw;
+      }
+    }
+
+	/* BOOK THIS BUTTON */
+
+    .btn-book {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 9px 20px;
+      background: transparent;
+      border: 1.5px solid var(--gold);
+      border-radius: var(--border-radius);
+      color: var(--gold);
+      font-family: var(--font-body);
+      font-size: 0.8rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      text-decoration: none;
+    }
+
+    .btn-book:hover {
+      background: var(--gold);
+      color: var(--text-light);
+      transform: translateY(-2px);
+      box-shadow: 0 4px 16px rgba(200,146,42,0.3);
+    }
+
+    .btn-outline-gold {
+      background: transparent;
+      color: var(--gold);
+      border-color: var(--gold);
+    }
+
+    .btn-outline-gold:hover {
+      background: var(--gold);
+      color: var(--text-light);
+      border-color: var(--gold);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(200,146,42,0.35);
+    }
+
+	/* FOOTER */
+
+    footer {
+      background: var(--blue-deep);
+      border-top: 2px solid var(--gold);
+      padding: 32px 24px;
+      text-align: center;
+    }
+
+    .footer-inner {
+      max-width: var(--max-width);
+      margin: 0 auto;
+    }
+
+    .footer-logo {
+      font-family: var(--font-heading);
+      font-size: 1.2rem;
+      font-weight: 800;
+      color: var(--text-light);
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      margin-bottom: 8px;
+    }
+
+    .footer-logo span { color: var(--gold); }
+
+    footer p {
+      font-size: 0.8rem;
+      color: rgba(255,255,255,0.4);
+      margin-top: 8px;
+    }
+
+	/* ANIMATIONS */
+
+    @keyframes fadeUp {
+      from {
+        opacity: 0;
+        transform: translateY(24px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .hero-eyebrow { animation: fadeUp 0.6s ease both; animation-delay: 0.1s; }
+    .hero h1      { animation: fadeUp 0.6s ease both; animation-delay: 0.25s; }
+    .hero-tagline { animation: fadeUp 0.6s ease both; animation-delay: 0.4s; }
+    .hero-actions { animation: fadeUp 0.6s ease both; animation-delay: 0.55s; }
+
+	/* COMMON PHONE SIZE ADJUSTMENT */
+
+    .eyebrow-break { display: none; }
+
+    .burger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+  padding: 4px;
+  background: none;
+  border: none;
+}
+
+.burger span {
+  display: block;
+  width: 24px;
+  height: 2px;
+  background: var(--text-light);
+  transition: all 0.3s ease;
+}
+
+.burger.open span:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+.burger.open span:nth-child(2) {
+  opacity: 0;
+}
+.burger.open span:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
+}
+
+    @media (max-width: 768px) {
+      .eyebrow-sep-first { display: none; }
+      .eyebrow-break { display: block; }
+      .hero-eyebrow { line-height: 2; }
+
+      .nav-links { display: none; }  /* BURGER */
+
+      .hero-tagline {
+        max-width: 300px;            
+        font-size: 0.95rem;
+      }
+
+      .contact-grid {
+        grid-template-columns: 1fr;  
+        gap: 40px;
+      }
+
+      .values-grid {
+        grid-template-columns: 1fr;  
+        gap: 40px;
+      }
+
+      .values-pillars {
+        padding-top: 0;              
+      }
+
+      .form-row {
+        grid-template-columns: 1fr;  
+      }
+
+      
+
+      
+
+.mobile-menu {
+  display: none;
+  position: fixed;
+  top: 80px;
+  left: 0;
+  right: 0;
+  background: var(--blue-deep);
+  border-bottom: 2px solid var(--gold);
+  padding: 16px 24px;
+  z-index: 99;
+  flex-direction: column;
+}
+
+.mobile-menu.open {
+  display: flex;
+}
+
+.mobile-menu a {
+  color: var(--text-light);
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  padding: 14px 0;
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+  transition: color 0.2s;
+}
+
+.mobile-menu a:last-child {
+  border-bottom: none;
+}
+
+.mobile-menu a.active,
+.mobile-menu a:hover {
+  color: var(--gold);
+}
+
+@media (max-width: 768px) {
+  .burger {
+    display: flex;
+  }
+}
+    }
+  </style>
+</head>
+<body>
+
+       <!-- NAV JUMP LINKS -->
+
+  <nav aria-label="Main navigation">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">
+  <img src="favicon_noBG.webp" alt="Care and Cables logo" class="nav-logo-img">
+  Care <span>& Cables</span>
+</a>
+      <ul class="nav-links">
+	<li><a href="#contact">Get a Quote</a></li>
+        <li><a href="index.html" class="active">Home</a></li>
+        <li><a href="services.html">Services</a></li>
+	<li><a href="audits.html">Audits</a></li>
+	<li><a href="securedatadestruction.html">Secure Data Destruction</a><li>
+      </ul>
+      <button class="burger" id="burger" aria-label="Toggle menu">
+      <span></span>
+      <span></span>
+      <span></span>
+     </button>
+    </div>
+  </nav>
+
+<div class="mobile-menu" id="mobile-menu">
+  <a href="index.html#contact" class="mobile-nav-link">Get a Quote</a>
+  <a href="index.html" class="mobile-nav-link active">Home</a>
+  <a href="services.html" class="mobile-nav-link">Services</a>
+  <a href="audits.html" class="mobile-nav-link">Audits</a>
+  <a href="securedatadestruction.html" class="mobile-nav-link">Secure Data Destruction</small></a>
+</div>
+
+	<div class="announcement-banner">
+  <div class="marquee-track"><span>🛠️ <strong><span class="flash">FREE TECH CLEAN</span></strong>🛠️ for older &amp; heavily used PCs and consoles. Dusting, Fan Service, Heatsink Fin Cleaning, Full System Health Check! Book yours today @ +1 (647) 728-2004 or use the contact form below! &nbsp;&nbsp;&nbsp;•&nbsp;&nbsp;&nbsp; 📋 <strong>INTERESTED IN AN AUDIT?</strong>📋 Integrity testing can be done easily for your network infrastructure, inquire below or book @ +1 (647) 728-2004! &nbsp;&nbsp;&nbsp;•&nbsp;&nbsp;&nbsp;</span><span>🛠️ <strong><span class="flash">FREE TECH CLEAN</span></strong>🛠️ for older &amp; heavily used PCs and consoles. Dusting, Fan Service, Heatsink Fin Cleaning, Full System Health Check! Book yours today @ +1 (647) 728-2004 or use the contact form below! &nbsp;&nbsp;&nbsp;•&nbsp;&nbsp;&nbsp; 📋 <strong>INTERESTED IN AN AUDIT?</strong>📋 Integrity testing can be done easily for your network infrastructure, inquire below or book @ +1 (647) 728-2004! &nbsp;&nbsp;&nbsp;•&nbsp;&nbsp;&nbsp;</span></div>
+</div>
+
+	<!-- HERO - TITLE -->
+
+  <section class="hero" id="top" aria-label="Hero">
+    <header class="hero-content container">
+      <p class="hero-eyebrow">
+        <span class="eyebrow-item"><em><small>Greater Toronto Area</em></small></span>
+      </p>
+
+      <h1>Your Setup.<br><em>Our Mess.</em></h1>
+
+      <p class="hero-tagline">
+        <span style="color: #ffffff;">Cable management, network audits, hardware restoration, and more.<br>
+        <strong>Your one-stop shop for simple solutions to the creeping chaos - wherever it hides.</strong></span>
+      </p>
+
+      <div class="hero-actions">
+        <a href="#contact" class="btn btn-outline-gold">Get a Free Quote</a>
+        <a href="services.html" class="btn btn-outline">See Services</a>
+      </div>
+    </div>
+  </section>
+
+
+	<!-- VALUES - BETWEEN HERO AND REVIEWS -->
+
+  <section class="values" id="values" aria-label="Values">
+    <div class="container">
+      <div class="values-grid">
+
+        <!-- Left: written copy -->
+        <div class="values-text">
+          <p class="section-label"><small>Our Values</small></p>
+          <h2 class="section-title light">Every Detail, <em style="color: #e8a83a; font-style: normal;">Handled.</em></h2>
+
+          <p>
+            <span style="color: #e8a83a;">Care and Cables</span> was created with a simple idea in mind:<br>Clients deserve to feel comfortable and looped in - not rushed, spoken down to, or nickel-and-dimed.
+          </p>
+	  <p>
+	    <span style="color: #e8a83a;">We care</span> about your tech, and the data that flows through it. Proper handling and clean workspaces aren't optional to us - they're the baseline.
+   	  </p>
+	  <p>
+	    <span style="color: #e8a83a;">We're committed</span> to risk management, offering physical network infrastructure audits for both home and commercial scenarios. Small issues can snowball into big data loss or disruption. <br>Let's curb that, together.
+	  </p>
+          <p>
+            Tech can feel intimidating, and cluttered spaces can feel unsurmountable - you don't have to feel lost or like you have to commit to hours of research. We'll show up, listen, and get the job done.
+          </p>
+        </div>
+
+          <div class="values-pillars">
+
+          <div class="pillar">
+            <div class="pillar-icon">🗣️</div>
+            <div class="pillar-text">
+              <h4>No Guesswork</h4>
+              <p>We'll walk you through our process, what needs doing, and why - clearly and with zero pressure to commit.</p>
+            </div>
+          </div>
+
+          <div class="pillar">
+            <div class="pillar-icon">🔍</div>
+            <div class="pillar-text">
+              <h4>No Surprises</h4>
+              <p>Pricing is discussed and agreed upon before anything starts. No hidden fees, no upsells mid-job.</p>
+            </div>
+          </div>
+
+          <div class="pillar">
+            <div class="pillar-icon">✨</div>
+            <div class="pillar-text">
+              <h4>Done With Care</h4>
+              <p>We don't leave until the job is done right. Your tech and cabling have never looked so clean.</p>
+            </div>
+          </div>
+
+	   <div style="text-align: center; margin-top: 40px; grid-column: 1 / -1;">
+          <a href="services.html" class="btn btn-primary">See Services</a>
+        </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+	<!-- REVIEW BANNER -->
+
+	<section class="reviews" aria-label="Google Reviews">
+  <div class="reviews-inner">
+
+    <a href="https://g.page/r/CdD6QcuXJnn5EAI/review" target="_blank" rel="noopener" style="text-decoration: none; display: flex; align-items: center; justify-content: center; gap: 10px; margin-bottom: 28px;">
+      <span class="reviews-google-logo">
+        <svg width="20" height="20" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+          <path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/>
+          <path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/>
+          <path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/>
+          <path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/>
+          <path fill="none" d="M0 0h48v48H0z"/>
+        </svg>
+      </span>
+      <span class="reviews-title">Google Reviews</span>
+      <span class="reviews-stars">★★★★★</span>
+      <span class="reviews-rating">5.0</span>
+    </a>
+
+    <p style="text-align: center; font-size: 0.8rem; color: rgba(255,255,255,0.6); margin-bottom: 20px; letter-spacing: 0.05em;">
+  Also find us on 
+<a href="https://www.facebook.com/profile.php?id=61579313713745" target="_blank" style="color: var(--gold); text-decoration: none;">Facebook</a> 
+&amp; <a href="https://www.linkedin.com/in/bailey-campbell-4943803b7/" target="_blank" style="color: var(--gold); text-decoration: none;">LinkedIn</a>
+</p>
+
+    <div class="reviews-track-outer">
+      <div class="reviews-track">
+
+        <div class="review-card">
+          <div class="review-stars">★★★★★</div>
+          <p class="review-text">"... I got a quick response from Bailey with pricing and how their procedure works, soon after the agreement he came over to my apartment and got to work! He was very organized and respectful and did a fantastic job! I would recommend for anybody looking for great service at a reasonable cost!"</p>
+          <div class="review-author">— Aidan S.</div>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+</section>	
+
+	<!-- CONTACT SECTION/FORM -->
+
+  <section class="contact" id="contact" id="contact" aria-label="Contact">
+
+    <img src="logo_long_noBG.webp" class="contact-bg">
+
+    <div class="container">
+      <div class="contact-grid">
+
+        <!-- Left column: info -->
+        <div class="contact-info">
+          <h2 class="section-title light">Let's Get To <span style="color: var(--gold-glow);">Work</h2>
+          <p class="section-desc light">
+            Have a project in mind? Whether you need a quote, have questions about our services, or just want to discuss your setup, we're here to help. When you use the form, give us a brief rundown of the situation but don't stress - we'll always discuss scope before a final price talk happens and never quote blindly. <br><br><strong>Don't feel like filling out all that info or unsure of your needs? Reach out to either contact option below (clickable) during opening hours to connect quickly.</strong>
+          </p>
+
+          <h3>Email</h3>
+          <a href="mailto:info@careandcables.ca"><span style="color: rgba(230,230,230,0.8);">info@careandcables.ca</span></a>
+
+          <h3>Phone</h3>
+          <a href="tel:+16477282004"><span style="color: rgba(230,230,230,0.8);">+1 (647) 728-2004</span></a>
+
+          <h3>Service Area</h3>
+          <p><span style="color: rgba(230,230,230,0.8);"><em>Scarborough & Surrounding Areas</em></span></p>
+        </div>
+
+        <!-- RIGHT:FORM -->
+        <div>
+          <form class="contact-form" id="contact-form" aria-label="Quote request form" action="https://api.web3forms.com/submit" method="POST">
+
+            <!-- Web3Forms access key — do not remove -->
+            <input type="hidden" name="access_key" value="0d0e4dc3-2476-4f79-a02b-a01b7d94e4e9" />
+            <input type="hidden" name="subject" value="New Enquiry — Care and Cables" />
+            <input type="hidden" name="from_name" value="Care and Cables Website" />
+            <!-- SAME PAGE REDIRECT -->
+            <input type="hidden" name="redirect" value="false" />
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="name">Your Name</label>
+                <input type="text" id="name" name="name" placeholder="Jane Smith" required />
+              </div>
+              <div class="form-group">
+                <label for="email">Email Address</label>
+                <input type="email" id="email" name="email" placeholder="jane@email.com" required />
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="phone">Phone (optional)</label>
+              <input type="tel" id="phone" name="phone" placeholder="+1 (000) 000-0000" />
+            </div>
+
+            <div class="form-group">
+              <label for="service">Service Type</label>
+              <select id="service" name="service" required>
+                <option value="" disabled selected>Select a service...</option>
+		<option>Audits</option>
+		<option>Cable Management</option>
+		<option>Console Clean</option>
+                <option>Custom Build</option>
+		<option>Data Destruction</option>
+                <option>PC Build</option>
+                <option>PC Clean</option>
+		<option>Testing</option>
+                <option>Not Sure / Multiple Services</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="message">Tell Us About the Job</label>
+              <textarea id="message" name="message" maxlength="1500" placeholder="Describe your setup, what needs doing, any details that might help us give you an accurate quote..."></textarea>
+              <div style="text-align: right; font-size: 0.75rem; color: rgba(255,255,255,0.35); margin-top: 4px;">
+                <span id="char-count">0</span> / 1500
+              </div>
+            </div>
+
+	    <div class="h-captcha" data-captcha="true"></div>
+
+            <div class="form-submit">
+              <button type="submit" class="btn btn-primary" id="submit-btn">Send Message →</button>
+            </div>
+
+            <!-- SUCCESS/ERROR ON FORM -->
+            <div id="form-success" style="display:none; margin-top:16px; padding:14px 18px; background:rgba(200,146,42,0.12); border:1px solid rgba(200,146,42,0.35); border-radius:8px; color:rgba(255,255,255,0.85); font-size:0.9rem;">
+              ✅ Message sent! We'll be in touch as soon as possible.
+            </div>
+            <div id="form-error" style="display:none; margin-top:16px; padding:14px 18px; background:rgba(220,50,50,0.1); border:1px solid rgba(220,50,50,0.3); border-radius:8px; color:rgba(255,255,255,0.85); font-size:0.9rem;">
+              ❌ Something went wrong. Please check the captcha or email us directly at <a href="mailto:info@careandcables.ca">info@careandcables.ca</a>
+            </div>
+          </form>
+</div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+	<!-- FOOTER -->
+
+  <footer aria-label="Site footer">
+    <div class="footer-inner">
+      <div class="footer-logo">Care <span>& Cables</span></div>
+      <p><a href="mailto:info@careandcables.ca" style="color: var(--gold); text-decoration: none;">info@careandcables.ca</a> &nbsp;·&nbsp; <a href="tel:+16477282004" style="color: var(--gold); text-decoration: none; -webkit-text-stroke: 0.3px var(--gold);">+1 (647) 728-2004</a></p>
+      <p style="margin-top: 16px;">© <span id="copy-year"></span> Care and Cables. Toronto, ON.</p>
+    </div>
+  </footer>
+
+  <script>
+    // AUTO YEAR
+    document.getElementById('copy-year').textContent = new Date().getFullYear();
+
+    // PRE-SELECT SERVICE FROM URL PARAM
+var params = new URLSearchParams(window.location.search);
+var serviceParam = params.get('service');
+if (serviceParam) {
+  var dropdown = document.querySelector('#service');
+  if (dropdown) {
+    for (var i = 0; i < dropdown.options.length; i++) {
+      if (dropdown.options[i].text === serviceParam) {
+        dropdown.selectedIndex = i;
+        break;
+      }
+    }
+  }
+}	
+
+    // MARQUEE WIDTH RENDER FOR SMOOTH SCROLLING
+	window.addEventListener('load', function() {
+  const track = document.querySelector('.marquee-track');
+  const firstSpan = track.querySelector('span');
+  const w = firstSpan.offsetWidth;
+  track.style.setProperty('--marquee-offset', '-' + w + 'px');
+});
+
+    // CUSTOM SMOOTH SCROLL
+    function smoothScrollTo(target, duration) {
+      var start = window.scrollY;
+      var end = target.getBoundingClientRect().top + window.scrollY - 60;
+      var distance = end - start;
+      var startTime = null;
+
+      function easeInOutQuad(t) {
+        return t < 0.5 ? 2 * t * t : -1 + (4 - 2 * t) * t;
+      }
+
+      function step(timestamp) {
+        if (!startTime) startTime = timestamp;
+        var progress = Math.min((timestamp - startTime) / duration, 1);
+        window.scrollTo(0, start + distance * easeInOutQuad(progress));
+        if (progress < 1) requestAnimationFrame(step);
+      }
+
+      requestAnimationFrame(step);
+    }
+
+    // BURGER MENU
+var burger = document.getElementById('burger');
+var mobileMenu = document.getElementById('mobile-menu');
+
+burger.addEventListener('click', function() {
+  burger.classList.toggle('open');
+  mobileMenu.classList.toggle('open');
+});
+
+document.querySelectorAll('.mobile-nav-link').forEach(function(link) {
+  link.addEventListener('click', function() {
+    burger.classList.remove('open');
+    mobileMenu.classList.remove('open');
+  });
+});
+
+
+    document.querySelectorAll('a[href^="#"]').forEach(function(link) {
+      link.addEventListener('click', function(e) {
+        var href = link.getAttribute('href');
+        if (href === '#') return;
+        var target = document.querySelector(href);
+        if (target) {
+          e.preventDefault();
+          smoothScrollTo(target, 900); // 900ms — adjust to taste
+        }
+      });
+    });
+
+    // CHARACTER COUNTER
+    var messageArea = document.querySelector('#message');
+    var charCount = document.querySelector('#char-count');
+
+    if (messageArea && charCount) {
+      messageArea.addEventListener('input', function() {
+        charCount.textContent = messageArea.value.length;
+      });
+    }
+
+    // BOOK THIS BUTTONS
+    document.querySelectorAll('.btn-book').forEach(function(button) {
+      button.addEventListener('click', function() {
+        var service = button.dataset.service;
+        var dropdown = document.querySelector('#service');
+        if (dropdown) {
+          for (var i = 0; i < dropdown.options.length; i++) {
+            if (dropdown.options[i].text === service) {
+              dropdown.selectedIndex = i;
+              break;
+            }
+          }
+        }
+        var contactSection = document.querySelector('#contact');
+        if (contactSection) {
+          smoothScrollTo(contactSection, 900);
+        }
+      });
+    });
+
+    // WEB3FORMS SUBMISSION
+    var form = document.querySelector('#contact-form');
+    var submitBtn = document.querySelector('#submit-btn');
+    var successMsg = document.querySelector('#form-success');
+    var errorMsg = document.querySelector('#form-error');
+
+    if (form) {
+      form.addEventListener('submit', function(e) {
+        e.preventDefault();
+
+        submitBtn.disabled = true;
+        submitBtn.textContent = 'Sending...';
+
+        var data = new FormData(form);
+
+        fetch('https://api.web3forms.com/submit', {
+          method: 'POST',
+          body: data
+        })
+        .then(function(res) { return res.json(); })
+        .then(function(json) {
+          if (json.success) {
+            successMsg.style.display = 'block';
+            errorMsg.style.display = 'none';
+            form.reset();
+            if (charCount) charCount.textContent = '0';
+          } else {
+            errorMsg.style.display = 'block';
+            successMsg.style.display = 'none';
+          }
+        })
+        .catch(function() {
+          errorMsg.style.display = 'block';
+          successMsg.style.display = 'none';
+        })
+        .finally(function() {
+          submitBtn.disabled = false;
+          submitBtn.textContent = 'Send Message →';
+        });
+      });
+    }
+  </script>
+ <script src="https://web3forms.com/client/script.js" async defer></script>
+</body>
+</html>
+     
