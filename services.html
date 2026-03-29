@@ -972,5 +972,23 @@ document.querySelectorAll('.mobile-nav-link').forEach(function(link) {
     });
   </script>
 
+  <script>
+    (function() {
+      if (sessionStorage.getItem('_ac_sent')) return;
+      sessionStorage.setItem('_ac_sent', '1');
+      fetch('https://dawn-field-e400.damp-salad-29b5.workers.dev/collect', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          secret:   'f6e65ebf-5439-4c59-9475-b06ad83229f4',
+          path:     window.location.pathname,
+          newVisit: !localStorage.getItem('_ac_v'),
+        }),
+        keepalive: true,
+      }).catch(function(){});
+      localStorage.setItem('_ac_v', '1');
+    })();
+    </script>
+
 </body>
 </html>
