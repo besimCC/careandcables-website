@@ -1,0 +1,606 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-QXGLSR4QGP"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-QXGLSR4QGP');
+</script>
+
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Resources | Care and Cables</title>
+  <link rel="icon" href="favicon.png" type="image/png">
+  <link rel="apple-touch-icon" href="favicon.png">
+  <meta name="description" content="Practical guides on network audits, PC maintenance, cable management, and data destruction — from a tech service provider serving Scarborough and the Greater Toronto Area.">
+
+  <meta property="og:title" content="Resources | Care and Cables">
+  <meta property="og:description" content="Practical guides on network audits, PC maintenance, cable management, and secure data destruction — serving Scarborough and the GTA.">
+  <meta property="og:image" content="https://careandcables.ca/logo_og_ref.png">
+  <meta property="og:url" content="https://careandcables.ca/resources.html">
+  <meta property="og:type" content="website">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700;800;900&family=Barlow:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="shared.css" />
+
+  <style>
+    /* ARTICLE NAV PILLS */
+    .article-nav {
+      background: var(--blue-mid);
+      border-bottom: 1px solid rgba(200,146,42,0.2);
+      padding: 16px 24px;
+      position: sticky;
+      top: 60px;
+      z-index: 90;
+    }
+
+    .article-nav-inner {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .article-pill {
+      font-size: 0.72rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      text-decoration: none;
+      color: rgba(255,255,255,0.6);
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.12);
+      padding: 6px 14px;
+      border-radius: 999px;
+      transition: all 0.2s ease;
+      font-weight: 600;
+    }
+
+    .article-pill:hover {
+      color: var(--gold);
+      border-color: rgba(200,146,42,0.4);
+      background: rgba(200,146,42,0.06);
+    }
+
+    /* ARTICLES WRAPPER */
+    .articles-wrapper {
+      background: var(--blue-light);
+    }
+
+    /* INDIVIDUAL ARTICLE SECTION */
+    .article-section {
+      padding: 80px 24px;
+      border-bottom: 1px solid rgba(15,35,64,0.1);
+    }
+
+    .article-section:nth-child(even) {
+      background: rgba(255,255,255,0.5);
+    }
+
+    .article-inner {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 280px 1fr;
+      gap: 72px;
+      align-items: start;
+    }
+
+    /* LEFT SIDEBAR */
+    .article-sidebar {
+      position: sticky;
+      top: 120px;
+    }
+
+    .article-number {
+      font-family: var(--font-heading);
+      font-size: 5rem;
+      font-weight: 900;
+      color: rgba(200,146,42,0.12);
+      line-height: 1;
+      margin-bottom: -16px;
+      letter-spacing: -0.02em;
+    }
+
+    .article-tag {
+      display: inline-block;
+      padding: 4px 10px;
+      background: rgba(200,146,42,0.1);
+      border: 1px solid rgba(200,146,42,0.25);
+      border-radius: 999px;
+      font-size: 0.68rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 12px;
+    }
+
+    .article-sidebar h2 {
+      font-family: var(--font-heading);
+      font-size: clamp(1.6rem, 3vw, 2.2rem);
+      font-weight: 900;
+      text-transform: uppercase;
+      line-height: 1.05;
+      color: var(--blue-deep);
+      margin-bottom: 12px;
+    }
+
+    .article-sidebar h2 em {
+      font-style: normal;
+      color: var(--gold);
+    }
+
+    .article-sidebar .article-intro {
+      font-size: 0.875rem;
+      color: var(--text-muted);
+      line-height: 1.7;
+      margin-bottom: 20px;
+    }
+
+    .article-cta {
+      display: inline-block;
+      padding: 9px 20px;
+      background: transparent;
+      border: 1.5px solid var(--gold);
+      border-radius: var(--border-radius);
+      color: var(--gold);
+      font-family: var(--font-body);
+      font-size: 0.78rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      text-decoration: none;
+      transition: all 0.2s ease;
+    }
+
+    .article-cta:hover {
+      background: var(--gold);
+      color: var(--text-light);
+      transform: translateY(-2px);
+      box-shadow: 0 4px 16px rgba(200,146,42,0.3);
+    }
+
+    /* ARTICLE BODY */
+    .article-body {
+      padding-top: 8px;
+    }
+
+    .article-body h3 {
+      font-family: var(--font-heading);
+      font-size: 1.15rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--blue-deep);
+      margin: 32px 0 10px;
+    }
+
+    .article-body h3:first-child {
+      margin-top: 0;
+    }
+
+    .article-body p {
+      font-size: 0.975rem;
+      color: var(--text-dark);
+      line-height: 1.8;
+      margin-bottom: 16px;
+    }
+
+    .article-body p:last-child {
+      margin-bottom: 0;
+    }
+
+    .article-body a {
+      color: var(--gold);
+      text-decoration: none;
+      border-bottom: 1px solid rgba(200,146,42,0.3);
+      transition: border-color 0.2s, color 0.2s;
+      font-weight: 500;
+    }
+
+    .article-body a:hover {
+      color: var(--gold-glow);
+      border-color: var(--gold-glow);
+    }
+
+    .article-callout {
+      margin: 24px 0;
+      padding: 18px 22px;
+      background: rgba(200,146,42,0.07);
+      border-left: 3px solid var(--gold);
+      border-radius: 0 var(--border-radius) var(--border-radius) 0;
+      font-size: 0.9rem;
+      color: var(--text-dark);
+      line-height: 1.7;
+    }
+
+    .article-callout strong {
+      color: var(--blue-deep);
+    }
+
+    .article-list {
+      list-style: none;
+      padding: 0;
+      margin: 12px 0 20px;
+    }
+
+    .article-list li {
+      font-size: 0.95rem;
+      color: var(--text-dark);
+      line-height: 1.7;
+      padding: 5px 0 5px 20px;
+      position: relative;
+    }
+
+    .article-list li::before {
+      content: '→';
+      position: absolute;
+      left: 0;
+      color: var(--gold);
+      font-weight: 700;
+    }
+
+    .article-divider {
+      border: none;
+      border-top: 1px solid rgba(15,35,64,0.1);
+      margin: 28px 0;
+    }
+
+    /* CTA BAND */
+    .cta-band {
+      background: var(--blue-deep);
+      padding: 72px 24px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .cta-band::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='60' height='60'%3E%3Cg transform='rotate(45 30 30)'%3E%3Ccircle cx='30' cy='30' r='2' fill='%23c8922a' opacity='0.1'/%3E%3Cline x1='30' y1='0' x2='30' y2='22' stroke='%23c8922a' stroke-width='1' opacity='0.1'/%3E%3Cline x1='30' y1='38' x2='30' y2='60' stroke='%23c8922a' stroke-width='1' opacity='0.1'/%3E%3Cline x1='0' y1='30' x2='22' y2='30' stroke='%23c8922a' stroke-width='1' opacity='0.1'/%3E%3Cline x1='38' y1='30' x2='60' y2='30' stroke='%23c8922a' stroke-width='1' opacity='0.1'/%3E%3C/g%3E%3C/svg%3E");
+      pointer-events: none;
+    }
+
+    .cta-band-content { position: relative; z-index: 1; }
+
+    .cta-band h2 {
+      font-family: var(--font-heading);
+      font-size: clamp(2rem, 5vw, 3.2rem);
+      font-weight: 900;
+      color: var(--text-light);
+      text-transform: uppercase;
+      margin-bottom: 12px;
+    }
+
+    .cta-band h2 em { font-style: normal; color: var(--gold); }
+
+    .cta-band p {
+      color: rgba(255,255,255,0.6);
+      font-size: 1rem;
+      max-width: 480px;
+      margin: 0 auto 32px;
+      line-height: 1.7;
+    }
+
+    @media (max-width: 820px) {
+      .article-inner {
+        grid-template-columns: 1fr;
+        gap: 32px;
+      }
+
+      .article-sidebar {
+        position: static;
+      }
+
+      .article-number {
+        font-size: 3.5rem;
+      }
+
+      .article-nav {
+        overflow-x: auto;
+        white-space: nowrap;
+      }
+
+      .article-nav-inner {
+        flex-wrap: nowrap;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <nav aria-label="Main navigation">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">
+        <img src="favicon_noBG.webp" alt="Care and Cables logo" class="nav-logo-img">
+        Care <span>& Cables</span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="index.html#contact">Get a Quote</a></li>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="audits.html">Audits</a></li>
+        <li><a href="securedatadestruction.html">Secure Data Destruction</a></li>
+        <li><a href="resources.html" class="active">Resources</a></li>
+      </ul>
+      <button class="burger" id="burger" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <div class="mobile-menu" id="mobile-menu">
+    <a href="index.html#contact" class="mobile-nav-link">Get a Quote</a>
+    <a href="index.html" class="mobile-nav-link">Home</a>
+    <a href="services.html" class="mobile-nav-link">Services</a>
+    <a href="audits.html" class="mobile-nav-link">Audits</a>
+    <a href="securedatadestruction.html" class="mobile-nav-link">Secure Data Destruction</a>
+    <a href="resources.html" class="mobile-nav-link active">Resources</a>
+  </div>
+
+  <header class="page-header">
+    <div class="page-header-content container">
+      <p class="section-label">Learn</p>
+      <h1>Resources &<br><em>Guides</em></h1>
+      <p class="page-header-desc">Straightforward answers to the tech questions we get asked most — no jargon, no upsell, just useful information.</p>
+    </div>
+  </header>
+
+  <nav class="article-nav" aria-label="Article navigation">
+    <div class="article-nav-inner">
+      <a href="#network-audits" class="article-pill">What is a network audit?</a>
+      <a href="#pc-cleaning" class="article-pill">Does my PC need cleaning?</a>
+      <a href="#cable-management" class="article-pill">Cable management basics</a>
+      <a href="#data-destruction" class="article-pill">Deletion vs. destruction</a>
+    </div>
+  </nav>
+
+  <main class="articles-wrapper">
+
+    <!-- ARTICLE 1: NETWORK AUDITS -->
+    <article class="article-section" id="network-audits" aria-label="What a network audit actually involves">
+      <div class="article-inner">
+
+        <div class="article-sidebar">
+          <div class="article-number">01</div>
+          <div class="article-tag">Audits</div>
+          <h2>What a Network Audit <em>Actually</em> Involves</h2>
+          <p class="article-intro">Most people picture someone staring at a screen full of green code. The reality is more boots-on-the-ground than that.</p>
+          <a href="audits.html" class="article-cta">See Audit Pricing →</a>
+        </div>
+
+        <div class="article-body">
+          <h3>It starts with the physical layer</h3>
+          <p>When we talk about a network audit at Care and Cables, we're talking first and foremost about the physical infrastructure — the actual cables running through your walls, the patch panels in your server closet, the switches and routers doing the heavy lifting. Before any software or configuration analysis happens, we need to know that the foundation is solid.</p>
+          <p>This matters because a lot of network issues that get blamed on software — dropped connections, slow file transfers, unreliable Wi-Fi in certain areas — are actually caused by a bad cable run, a loose termination, or a wiring fault introduced during the original installation. We've seen this consistently in buildings across Scarborough and the east end of Toronto, particularly in older commercial spaces where the cabling was done once and never revisited.</p>
+
+          <div class="article-callout">
+            <strong>The most common fault we find:</strong> split pairs. Two wires that look connected and technically pass a basic continuity test, but are paired incorrectly — causing signal crosstalk that degrades performance under load. Most people never know this is happening because the connection works, just not as well as it should.
+          </div>
+
+          <h3>What actually gets tested</h3>
+          <p>Every network drop — the wall ports your devices plug into — gets tested end to end. We're checking wiremap (are all eight conductors connected correctly and in the right order?), continuity (is the signal actually making it from one end to the other?), and on shielded cable installations, whether the shield is intact and grounded properly.</p>
+          <p>At the same time, every piece of active hardware gets physically inspected. Switches, routers, access points, patch panels, UPS units. We're checking temperatures, port activity, physical condition, and documenting everything we find — including devices that weren't in your existing documentation, which happens more often than you'd think. Unmanaged switches tucked into drop ceilings are a classic one.</p>
+
+          <h3>The report is the deliverable</h3>
+          <p>Everything we find gets compiled into a written report — severity rated, clearly organized, and written so that both a technical person and a business owner can read it and understand what needs to happen. Critical findings are flagged prominently. We don't bury the important stuff in an appendix.</p>
+          <p>After delivering the report we do a walkthrough with you covering the key findings and our recommendations. You're never handed a document and left to figure it out alone.</p>
+
+          <div class="article-callout">
+            <strong>Full Assessment audits</strong> add a logical layer on top — reviewing router and switch configuration, running an active network scan, checking firmware versions, and doing a security posture review. If you're running a business with sensitive data flowing through your network in the GTA, this is the tier worth considering. <a href="audits.html">See the full breakdown of what's included.</a>
+          </div>
+
+          <h3>Who actually needs one</h3>
+          <p>If your network was installed by someone else and you've never had it independently verified — you need one. If you're experiencing unexplained performance issues, outages, or you're preparing to scale your infrastructure — you need one. If you're in a commercial or medical space where downtime has real cost — you definitely need one.</p>
+          <p>For home setups, a residential audit makes sense if you're running a home office with business-critical connectivity, or if you just want peace of mind that your ISP-provided gear and the wiring in your house are actually doing what they should be.</p>
+        </div>
+      </div>
+    </article>
+
+    <!-- ARTICLE 2: PC CLEANING -->
+    <article class="article-section" id="pc-cleaning" aria-label="How to tell if your PC needs cleaning">
+      <div class="article-inner">
+
+        <div class="article-sidebar">
+          <div class="article-number">02</div>
+          <div class="article-tag">Tech Care</div>
+          <h2>How to Tell if Your PC Needs <em>Cleaning</em></h2>
+          <p class="article-intro">Your computer doesn't have to be visibly filthy to be struggling. Dust is subtle, and by the time it's obvious it's usually already done damage.</p>
+          <a href="services.html#tech-care" class="article-cta">See Cleaning Services →</a>
+        </div>
+
+        <div class="article-body">
+          <h3>The silent killer of hardware</h3>
+          <p>Dust accumulation is one of the most common and preventable causes of hardware failure — and one of the most consistently overlooked. Your computer's fans are pulling air through the case constantly. Along with that air comes dust, pet hair, skin cells, and whatever else is floating around in your space. Over time it builds up on heatsink fins, fan blades, and PCIe slots, acting as an insulating blanket over components that are designed to run cool.</p>
+          <p>The result is gradual thermal throttling — your CPU and GPU detect they're running too hot and reduce their own performance to compensate. Your computer feels slow, not because anything is broken, but because it's managing its own temperature instead of running at full capacity. In Toronto and Scarborough apartments especially, where windows are often closed and air recirculates, we see this accelerated compared to homes with better ventilation.</p>
+
+          <h3>Signs it's time</h3>
+          <ul class="article-list">
+            <li>Your fans are noticeably louder than they used to be — especially under light load</li>
+            <li>The machine runs hot to the touch, or tasks that used to be smooth now stutter</li>
+            <li>It's been more than a year since the last clean (or you've never had it done)</li>
+            <li>You have pets — cat and dog hair accelerates buildup dramatically</li>
+            <li>You notice it taking longer to boot or open applications than it used to</li>
+            <li>It's occasionally shutting itself off without warning — thermal shutdown is a real safety mechanism</li>
+          </ul>
+
+          <div class="article-callout">
+            <strong>A note on laptops:</strong> these are worse than desktops for dust buildup because the airflow paths are much tighter. A laptop running hot is worth addressing sooner rather than later — the components are closer together and less tolerant of sustained heat than a desktop tower.
+          </div>
+
+          <h3>What a proper clean actually involves</h3>
+          <p>A basic clean covers dust removal throughout the case, fan blade wipe-down, and a temperature check before and after to confirm improvement. It's the maintenance equivalent of an oil change — routine, affordable, and worth doing 2-4 times a year depending on your environment.</p>
+          <p>An advanced clean goes further: fresh thermal paste on the CPU (and GPU on applicable cards), heatsink fin cleaning with compressed air and a soft brush, PCIe slot cleaning, and a full health check across drives, memory, and temperatures. We recommend this once annually or any time a machine has been neglected for an extended period.</p>
+
+          <hr class="article-divider">
+
+          <p>We also offer a software optimization add-on for $15 alongside any clean — startup management, background process cleanup, and a few other things that make a meaningful difference to day-to-day feel. Combined with a clean it's the closest thing to a full refresh short of a reinstall, and considerably less disruptive.</p>
+        </div>
+      </div>
+    </article>
+
+    <!-- ARTICLE 3: CABLE MANAGEMENT -->
+    <article class="article-section" id="cable-management" aria-label="Cable management basics">
+      <div class="article-inner">
+
+        <div class="article-sidebar">
+          <div class="article-number">03</div>
+          <div class="article-tag">Cable Care</div>
+          <h2>Cable Management: More Than Just <em>Looking Clean</em></h2>
+          <p class="article-intro">A tidy setup isn't vanity. Disorganized cables cause real problems — and they get worse over time if you don't address them.</p>
+          <a href="services.html#cable-care" class="article-cta">See Cable Services →</a>
+        </div>
+
+        <div class="article-body">
+          <h3>Why it actually matters</h3>
+          <p>The case for cable management usually starts with aesthetics — and fair enough, a clean desk setup looks and feels better to work at. But the practical arguments are just as strong. Bundled, routed cables reduce the chance of accidental disconnections. Labelled runs mean that when something goes wrong at 9am on a Monday, you're not crawling behind furniture trying to figure out what plugs into what. And in a workspace with active airflow — a server rack, a PC tower, a media unit — cables left loose can genuinely impede airflow and contribute to heat buildup.</p>
+          <p>In commercial environments across Scarborough and Toronto, we've walked into server closets where years of accumulated cable runs have made simple tasks — swapping a patch cable, adding a device, tracing a fault — take three times longer than they should. That's time and money every time something needs to change.</p>
+
+          <h3>What good cable management involves</h3>
+          <ul class="article-list">
+            <li><strong>Routing</strong> — cables run along logical paths, not across open space or at tension</li>
+            <li><strong>Bundling</strong> — related cables grouped together with velcro ties or cable combs, not zip ties (zip ties are permanent and damage cables if overtightened)</li>
+            <li><strong>Labelling</strong> — both ends of every run, especially in patch panels and server environments</li>
+            <li><strong>Slack management</strong> — enough length to work with, not so much that it pools on the floor</li>
+            <li><strong>Separation</strong> — power and data cables kept apart where possible to minimize interference</li>
+          </ul>
+
+          <div class="article-callout">
+            <strong>On zip ties:</strong> we see these constantly in DIY setups and they're almost always the wrong choice for cable management. Overtightened zip ties crush the cable jacket, which can damage the conductors inside and degrade signal quality over time. Velcro is reusable, adjustable, and doesn't damage anything. Use velcro.
+          </div>
+
+          <h3>Pet-proofing is a real service</h3>
+          <p>We get more requests for this than you might expect. Cats and dogs chew cables — not maliciously, just because they're there and they're interesting. A chewed cable is a fire risk and a data risk, and replacing individual cables in a complex setup can be surprisingly expensive. Running cables through protective conduit or flexible split loom, or routing them completely out of reach, is a straightforward fix that most pet owners put off far too long.</p>
+
+          <h3>When to call someone in</h3>
+          <p>If you're looking at your desk or your server closet and your honest reaction is "I don't even know where to start" — that's exactly when it makes sense to bring someone in. We'll assess the space, discuss what you actually need, and give you a clear quote before touching anything. No obligation to commit until you know what you're getting.</p>
+        </div>
+      </div>
+    </article>
+
+    <!-- ARTICLE 4: DATA DESTRUCTION -->
+    <article class="article-section" id="data-destruction" aria-label="Data destruction vs deletion">
+      <div class="article-inner">
+
+        <div class="article-sidebar">
+          <div class="article-number">04</div>
+          <div class="article-tag">Data Destruction</div>
+          <h2>Deletion Isn't <em>Destruction.</em> Here's the Difference.</h2>
+          <p class="article-intro">Emptying the recycle bin doesn't do what most people think it does. Neither does a factory reset, most of the time.</p>
+          <a href="securedatadestruction.html" class="article-cta">See Data Destruction →</a>
+        </div>
+
+        <div class="article-body">
+          <h3>What deletion actually does</h3>
+          <p>When you delete a file — whether on Windows, macOS, or any other operating system — the file itself doesn't immediately disappear. What gets removed is the entry in the file system's index that points to where that data lives on the drive. The data itself stays exactly where it is, taking up space, until the operating system decides to write something new over that area. Until that happens, the data is trivially recoverable with freely available software.</p>
+          <p>This is why simply deleting files before selling or donating a computer, or doing a quick format of a drive, is not an adequate security measure for anything sensitive. Personal photos, banking information, business documents, emails, saved passwords — all of it can be recovered by anyone motivated enough to try, which doesn't require much motivation at all with modern recovery tools.</p>
+
+          <div class="article-callout">
+            <strong>SSDs are a special case.</strong> Traditional overwrite-based data wiping methods designed for spinning hard drives don't work reliably on SSDs due to how flash memory manages writes. If you have an SSD with sensitive data, physical destruction is the only method that guarantees it's gone.
+          </div>
+
+          <h3>What about factory resets?</h3>
+          <p>A factory reset returns the software to its default state — it doesn't necessarily wipe the underlying storage. On older devices especially, a factory reset often just reinstalls the operating system without touching the data partition. Even on devices that claim to wipe data during a reset, the thoroughness varies significantly by manufacturer and OS version. For a personal device with minimal sensitive data, a reset is probably fine. For a business device, a medical device, or anything that's touched financial or legal data — it isn't.</p>
+
+          <h3>What proper destruction looks like</h3>
+          <p>Physical destruction is the only method that offers an absolute guarantee. A drive that has been physically shredded cannot be recovered under any circumstances by any means. This is why regulated industries — healthcare, legal, finance — are required to use certified destruction rather than software-based wiping.</p>
+          <p>Care and Cables partners with R2 and e-Stewards certified facilities for all media destruction. Every piece of media is logged before it's touched, transported under strict chain of custody, destroyed at a certified facility, and you receive a written certificate of destruction for your records. For businesses in the Greater Toronto Area managing personal data under PIPEDA, that certificate is the documentation you need to demonstrate compliance.</p>
+
+          <h3>Who needs to think about this</h3>
+          <p>The honest answer is anyone retiring old hardware. It's not just businesses with formal compliance requirements. Old laptops, desktop hard drives, USB sticks, even old phones with SD cards — if it stored anything you wouldn't want a stranger reading, it warrants proper handling before it leaves your hands. We see this come up a lot when Toronto-area businesses refresh their hardware on a cycle, or when individuals are clearing out home offices and realize they have a box of old drives they're not sure what to do with.</p>
+          <p>If you're unsure whether what you have warrants certified destruction, <a href="securedatadestruction.html">reach out and describe what you've got</a> — we'll give you a straight answer.</p>
+        </div>
+      </div>
+    </article>
+
+  </main>
+
+  <div class="cta-band">
+    <div class="cta-band-content container">
+      <h2>Have a Question We <em>Didn't Cover?</em></h2>
+      <p>Reach out directly — we'd rather answer your specific situation than have you guess from a general guide.</p>
+      <a href="index.html#contact" class="btn btn-primary">Get in Touch →</a>
+    </div>
+  </div>
+
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-logo">Care <span>& Cables</span></div>
+      <p>
+        <a href="mailto:info@careandcables.ca" style="color: var(--gold); text-decoration: none;">info@careandcables.ca</a>
+        &nbsp;·&nbsp;
+        <a href="tel:+16477282004" style="color: var(--gold); text-decoration: none;">+1 (647) 728-2004</a>
+      </p>
+      <p style="margin-top: 16px;">© <span id="copy-year"></span> Care and Cables. Toronto, ON.</p>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('copy-year').textContent = new Date().getFullYear();
+
+    var burger = document.getElementById('burger');
+    var mobileMenu = document.getElementById('mobile-menu');
+
+    burger.addEventListener('click', function() {
+      burger.classList.toggle('open');
+      mobileMenu.classList.toggle('open');
+    });
+
+    document.querySelectorAll('.mobile-nav-link').forEach(function(link) {
+      link.addEventListener('click', function() {
+        burger.classList.remove('open');
+        mobileMenu.classList.remove('open');
+      });
+    });
+
+    document.querySelectorAll('a[href^="#"]').forEach(function(link) {
+      link.addEventListener('click', function(e) {
+        var href = link.getAttribute('href');
+        if (href === '#') return;
+        var target = document.querySelector(href);
+        if (target) {
+          e.preventDefault();
+          var start = window.scrollY;
+          var end = target.getBoundingClientRect().top + window.scrollY - 110;
+          var distance = end - start;
+          var startTime = null;
+          function easeInOutQuad(t) { return t < 0.5 ? 2*t*t : -1+(4-2*t)*t; }
+          function step(timestamp) {
+            if (!startTime) startTime = timestamp;
+            var progress = Math.min((timestamp - startTime) / 900, 1);
+            window.scrollTo(0, start + distance * easeInOutQuad(progress));
+            if (progress < 1) requestAnimationFrame(step);
+          }
+          requestAnimationFrame(step);
+        }
+      });
+    });
+  </script>
+
+  <script>
+    (function() {
+      if (sessionStorage.getItem('_ac_sent')) return;
+      sessionStorage.setItem('_ac_sent', '1');
+      fetch('https://dawn-field-e400.damp-salad-29b5.workers.dev/collect', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          secret:   'f6e65ebf-5439-4c59-9475-b06ad83229f4',
+          path:     window.location.pathname,
+          newVisit: !localStorage.getItem('_ac_v'),
+        }),
+        keepalive: true,
+      }).catch(function(){});
+      localStorage.setItem('_ac_v', '1');
+    })();
+  </script>
+
+</body>
+</html>
