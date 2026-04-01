@@ -133,6 +133,7 @@ All pages link to `shared.css`. Every page also has a `<style>` block for page-s
 - `audits.html` — stage cards, process arrows, pricing card variants, star icon for logical-layer items
 - `services.html` — service item rows, sticky section nav, service notes, CTA band
 - `index.html` — hero, reviews track, marquee animation, contact form layout, values grid
+- `resources.html` — article nav pills, article section layout, two-column sidebar grid, article body/callout/list styles, cta-band
 
 Do not move page-specific styles into shared.css without explicit approval.
 
@@ -143,7 +144,7 @@ Do not move page-specific styles into shared.css without explicit approval.
 ### HTML
 - Semantic HTML5 elements (`<section>`, `<nav>`, `<header>`, `<footer>`, `<main>`).
 - All pages have: `<meta charset>`, `<meta viewport>`, `<meta description>`, Open Graph tags, Google Analytics script, Schema.org JSON-LD (index.html only), and a `<link rel="stylesheet" href="shared.css">`.
-- Navigation is duplicated in every HTML file (no server-side includes). If nav changes, it must be updated in all four files.
+- Navigation is duplicated in every HTML file (no server-side includes). If nav changes, it must be updated in all HTML files. Currently five files: index.html, services.html, audits.html, securedatadestruction.html, resources.html.
 
 ### CSS
 - Use existing custom properties from `:root` — never hardcode a color that already has a variable.
@@ -221,28 +222,24 @@ Four-article informational page covering: network audits, PC cleaning, cable man
 
 **Active class status:** Already correctly applied — `class="active"` on the desktop nav link and `class="mobile-nav-link active"` on the mobile menu link.
 
-**Known issues to fix before going live (reviewed 2026-03-31):**
+**Fixes applied (2026-04-01):**
 
-1. **Missing `<link rel="stylesheet" href="shared.css">`** — The file has no shared.css link. All CSS is inline, including nav, footer, buttons, page-header, reset, and `:root` variables — all of which duplicate shared.css. Fix: add the stylesheet link, then strip the `<style>` block down to only resources-specific CSS (article layout, sidebar, body, callout, list, divider, cta-band, media query). The page-specific styles to keep are: `.article-nav`, `.article-pill`, `.articles-wrapper`, `.article-section`, `.article-inner`, `.article-sidebar`, `.article-number`, `.article-tag`, `.article-body` and children, `.article-callout`, `.article-list`, `.article-divider`, `.cta-band`, and the `@media` block.
+1. ~~Missing `<link rel="stylesheet" href="shared.css">`~~ — **Fixed.** Stylesheet link added; `<style>` block stripped down to page-specific CSS only (article layout, sidebar, body, callout, list, divider, cta-band, media query). All nav, footer, button, page-header, reset, and `:root` duplicates removed.
 
-2. **Encoding issues — garbled characters throughout.** Every `â`, `Â·`, `Â©` is a broken UTF-8 artifact. Locations and fixes:
-   - `<meta name="description">` and `<meta property="og:description">`: `â` → `—`
-   - `.page-header-desc` text: `â` → `—`
-   - All `.article-cta` button text: `â` → `→`
-   - `.article-list li::before { content: 'â' }` → `content: '→'`
-   - Footer separator: `Â·` → `·`
-   - Footer copyright: `Â©` → `©`
+2. ~~Encoding issues~~ — **Fixed.** All garbled characters replaced: `—` in meta/header text, `→` in CTA buttons and `::before` bullet content, `·` and `©` in footer.
 
-3. **Mobile breakpoint is `768px`** — shared.css uses `820px`. Once shared.css is linked (fix #1), this becomes irrelevant since the media query in the `<style>` block will be stripped or only cover layout changes (not the burger trigger, which belongs in shared.css). The shared.css breakpoint also needs to be raised for 5-nav-item support (see item 6 below).
+**Remaining before going live:**
+
+3. **shared.css burger breakpoint** — needs to be raised from `820px` (and nav `gap` trimmed) to accommodate 5 nav items without squishing. Deferred — being handled separately once content is finalized. resources.html media query is already at `820px` and will inherit the shared.css change automatically.
 
 **Content verified:**
 - Pricing in article 1 ($225 Home, $400 Baseline, $600 Full Assessment) matches audits.html ✓
 - `services.html#tech-care` and `services.html#cable-care` anchor targets both exist ✓
 - Tone, GTA references, and writing style consistent with rest of site ✓
-- Software optimization add-on priced at $15 in article 2 — confirm this price is intentional before publishing
+- Software optimization add-on in article 2 — **update price from $15 → $25 before publishing.** GTA market for a standalone tune-up runs $49–$99; $25 as an add-on significantly undercuts that while being more defensible than $15. Also update the matching price on services.html if listed there.
 
 **When adding resources.html, these files all need updating:**
-1. `resources.html` — fix shared.css link + encoding issues (above)
+1. ~~`resources.html` — fix shared.css link + encoding issues~~ **Done (2026-04-01)**
 2. `index.html` — add Resources link to desktop nav and mobile menu
 3. `services.html` — add Resources link to desktop nav and mobile menu
 4. `audits.html` — add Resources link to desktop nav and mobile menu
