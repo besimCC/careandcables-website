@@ -271,6 +271,14 @@ Four-article informational page covering: network audits, PC cleaning, cable man
 
 3. **shared.css burger breakpoint** — needs to be raised from `820px` (and nav `gap` trimmed) to accommodate 5 nav items without squishing. Deferred — being handled separately once content is finalized. resources.html media query is already at `820px` and will inherit the shared.css change automatically.
 
+4. **`resources.html` canonical tag** — add `<link rel="canonical" href="https://careandcables.ca/resources.html">` before launch.
+
+5. **`resources.html` page title** — "Resources | Care and Cables" has no geo signal or keyword. Consider something like "PC Cleaning & Network Audit Guides — Scarborough | Care and Cables" before launch.
+
+6. **Software optimization price** — update from `$15` → `$25` in article 2 body text before publishing. Also check services.html for a matching entry and update there too.
+
+7. **Body text readability — site-wide, case-by-case** — font sizes and text colors across a large portion of the site need review. Text should be slightly larger and darker where readability is lacking. Audit each page and adjust individually; do not apply blanket changes.
+
 **Content verified:**
 - Pricing in article 1 ($225 Home, $400 Baseline, $600 Full Assessment) matches audits.html ✓
 - `services.html#tech-care` and `services.html#cable-care` anchor targets both exist ✓
