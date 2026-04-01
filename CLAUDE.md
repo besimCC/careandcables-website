@@ -24,7 +24,7 @@
 | Forms | Web3Forms API + hCaptcha |
 | Analytics | Google Analytics GA4 (`G-QXGLSR4QGP`) + custom Cloudflare Worker |
 | Email obfuscation | Cloudflare (audits.html, securedatadestruction.html) |
-| SEO | Schema.org JSON-LD (index.html), sitemap.xml, robots.txt |
+| SEO | Schema.org JSON-LD (index.html), canonical tags (all pages), sitemap.xml, robots.txt |
 | Deployment | Cloudflare Pages (auto-deploys from GitHub) |
 
 No package.json, no bundler, no framework, no build step. Files are served as-is.
@@ -143,7 +143,7 @@ Do not move page-specific styles into shared.css without explicit approval.
 
 ### HTML
 - Semantic HTML5 elements (`<section>`, `<nav>`, `<header>`, `<footer>`, `<main>`).
-- All pages have: `<meta charset>`, `<meta viewport>`, `<meta description>`, Open Graph tags, Google Analytics script, Schema.org JSON-LD (index.html only), and a `<link rel="stylesheet" href="shared.css">`.
+- All pages have: `<meta charset>`, `<meta viewport>`, `<meta description>`, `<link rel="canonical">` (self-referencing), Open Graph tags, Google Analytics script, Schema.org JSON-LD (index.html only), and a `<link rel="stylesheet" href="shared.css">`.
 - Navigation is duplicated in every HTML file (no server-side includes). If nav changes, it must be updated in all HTML files. Currently five files: index.html, services.html, audits.html, securedatadestruction.html, resources.html.
 
 ### CSS
@@ -199,6 +199,45 @@ The custom analytics worker sends `{ path, newVisit }` using `sessionStorage`/`l
 - **No build step.** Files are served exactly as they exist in this directory. No package.json, no bundler.
 - **Staging:** Cloudflare Pages provides a preview deployment. The user reviews changes in the live preview before they go to production. Despite this, still get explicit approval before making any change — the user wants to overview changes as they happen.
 - **Workflow:** Edit files → commit and push to GitHub → Cloudflare Pages auto-builds and deploys.
+
+---
+
+## SEO Status
+
+### Schema.org (index.html)
+- `@type`: `LocalBusiness`
+- `areaServed`: array of 7 GTA cities — Scarborough, Toronto, North York, Etobicoke, Mississauga, Markham, Pickering *(added 2026-04-01)*
+- `sameAs`: `https://share.google/IikKMsL1swSzzTm9P` (Google Business Profile) ✓ *(added 2026-04-01)*
+
+### Canonical Tags
+Self-referencing canonicals added to all four live pages *(2026-04-01)*:
+- `index.html` → `https://careandcables.ca/`
+- `services.html` → `https://careandcables.ca/services.html`
+- `audits.html` → `https://careandcables.ca/audits.html`
+- `securedatadestruction.html` → `https://careandcables.ca/securedatadestruction.html`
+
+When `resources.html` goes live, add `<link rel="canonical" href="https://careandcables.ca/resources.html">` to it.
+
+### Page Titles (last reviewed 2026-04-01)
+- `index.html` — "Care and Cables | Tech & Network Audits — Scarborough, ON" ✓ *(updated 2026-04-01)*
+- `services.html` — "Cable Management & PC Cleaning - Scarborough, ON | Care and Cables" ✓
+- `audits.html` — "Network Audits, The Ultimate Risk Management Tool - Toronto | Care and Cables"
+- `securedatadestruction.html` — "Secure Data Destruction, Certified via Partnerships - Toronto | Care and Cables"
+
+### Known SEO Fixes Applied (2026-04-01)
+- `services.html` `og:url` was incorrectly pointing to the root domain — fixed to `https://careandcables.ca/services.html`
+
+### Google Search Console
+Sitemap submitted ✓. Re-submit after significant content changes (e.g. when resources.html goes live).
+
+### Future SEO Improvements (lower priority, no urgency)
+1. **`sameAs` — swap to canonical GBP URL.** Current value is a `share.google` short link. If you ever locate the full Google Maps URL for the business (contains the Place ID or CID), swap it in `index.html` Schema.org for a marginally more explicit signal.
+2. **`audits.html` page title** — "The Ultimate Risk Management Tool" is a marketing phrase, not a search phrase. Consider something like "Physical Layer Network Audits — Scarborough & GTA | Care and Cables".
+3. **Schema.org `@type` refinement** — Change to `["LocalBusiness", "ComputerRepair"]` dual-type array to get into more specific SERP feature categories for tech services.
+4. **Schema.org `openingHoursSpecification`** — Add if/when service hours are defined. Helps Google populate the business panel.
+5. **OG image dimensions missing on two pages** — `audits.html` and `securedatadestruction.html` are missing `og:image:width` / `og:image:height` meta tags (1200/630). Present on index.html and services.html.
+6. **`sitemap.xml` `lastmod` dates** — Currently all `2026-03-30`. Update after significant content changes to help Google prioritize re-crawls.
+7. **`robots.txt` explicit `Allow`** — Currently only contains the sitemap line. Adding `Allow: /` removes any ambiguity for edge-case crawlers.
 
 ---
 
