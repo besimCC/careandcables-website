@@ -47,7 +47,7 @@ deployment/
 ├── favicon.png                      ← Browser tab icon
 ├── favicon_noBG.webp                ← Transparent logo used in nav
 ├── logo_long_noBG.webp              ← Long logo, used as contact section bg (index.html)
-├── logo_long_noBG2.webp             ← Long logo variant, used as header bg (services/audits)
+├── logo_long_noBG2.webp             ← Long logo variant, used as header bg (services/audits/resources)
 └── logo_og_ref.png                  ← Open Graph social share image (1200×630)
 ```
 
@@ -149,7 +149,7 @@ Do not move page-specific styles into shared.css without explicit approval.
 ### CSS
 - Use existing custom properties from `:root` — never hardcode a color that already has a variable.
 - The red color scheme on `securedatadestruction.html` is intentional and distinct — do not "fix" it to match the gold scheme.
-- Mobile breakpoint is `820px` (max-width media query).
+- Nav burger breakpoint is `1100px` (raised from 820px to accommodate 6 nav items including Resources). Content layout breakpoints within individual pages remain at `820px`.
 - Hover effects: `translateY(-2px)` lift + `box-shadow` depth. Transitions at `0.2s ease`.
 - Do not add new CSS custom properties without approval.
 
@@ -210,13 +210,12 @@ The custom analytics worker sends `{ path, newVisit }` using `sessionStorage`/`l
 - `sameAs`: `https://share.google/IikKMsL1swSzzTm9P` (Google Business Profile) ✓ *(added 2026-04-01)*
 
 ### Canonical Tags
-Self-referencing canonicals added to all four live pages *(2026-04-01)*:
-- `index.html` → `https://careandcables.ca/`
-- `services.html` → `https://careandcables.ca/services.html`
-- `audits.html` → `https://careandcables.ca/audits.html`
-- `securedatadestruction.html` → `https://careandcables.ca/securedatadestruction.html`
-
-When `resources.html` goes live, add `<link rel="canonical" href="https://careandcables.ca/resources.html">` to it.
+Self-referencing canonicals on all five live pages:
+- `index.html` → `https://careandcables.ca/` *(2026-04-01)*
+- `services.html` → `https://careandcables.ca/services.html` *(2026-04-01)*
+- `audits.html` → `https://careandcables.ca/audits.html` *(2026-04-01)*
+- `securedatadestruction.html` → `https://careandcables.ca/securedatadestruction.html` *(2026-04-01)*
+- `resources.html` → `https://careandcables.ca/resources.html` *(2026-04-03)*
 
 ### Page Titles (last reviewed 2026-04-01)
 - `index.html` — "Care and Cables | Tech & Network Audits — Scarborough, ON" ✓ *(updated 2026-04-01)*
@@ -228,7 +227,7 @@ When `resources.html` goes live, add `<link rel="canonical" href="https://carean
 - `services.html` `og:url` was incorrectly pointing to the root domain — fixed to `https://careandcables.ca/services.html`
 
 ### Google Search Console
-Sitemap submitted ✓. Re-submit after significant content changes (e.g. when resources.html goes live).
+Sitemap submitted ✓. **Re-submit now — resources.html went live 2026-04-03 and sitemap.xml has been updated.**
 
 ### Future SEO Improvements (lower priority, no urgency)
 1. **`sameAs` — swap to canonical GBP URL.** Current value is a `share.google` short link. If you ever locate the full Google Maps URL for the business (contains the Place ID or CID), swap it in `index.html` Schema.org for a marginally more explicit signal.
@@ -236,7 +235,7 @@ Sitemap submitted ✓. Re-submit after significant content changes (e.g. when re
 3. **Schema.org `@type` refinement** — Change to `["LocalBusiness", "ComputerRepair"]` dual-type array to get into more specific SERP feature categories for tech services.
 4. **Schema.org `openingHoursSpecification`** — Add if/when service hours are defined. Helps Google populate the business panel.
 5. **OG image dimensions missing on two pages** — `audits.html` and `securedatadestruction.html` are missing `og:image:width` / `og:image:height` meta tags (1200/630). Present on index.html and services.html.
-6. **`sitemap.xml` `lastmod` dates** — Currently all `2026-03-30`. Update after significant content changes to help Google prioritize re-crawls.
+6. **`sitemap.xml` `lastmod` dates** — Original four pages still show `2026-03-30`. resources.html entry correctly shows `2026-04-03`. Update existing entries after significant content changes to help Google prioritize re-crawls.
 7. **`robots.txt` explicit `Allow`** — Currently only contains the sitemap line. Adding `Allow: /` removes any ambiguity for edge-case crawlers.
 
 ---
@@ -244,7 +243,7 @@ Sitemap submitted ✓. Re-submit after significant content changes (e.g. when re
 ## Decisions Already Made
 
 - **No framework.** Vanilla HTML/CSS/JS was a deliberate choice for simplicity and zero dependencies.
-- **No shared nav component.** Nav is duplicated across all four HTML files. Accepted trade-off.
+- **No shared nav component.** Nav is duplicated across all five HTML files. Accepted trade-off.
 - **Page-specific styles stay inline.** CSS for unique page elements lives in `<style>` blocks inside each HTML file, not in shared.css.
 - **Red scheme for data destruction page** is intentional branding differentiation — do not normalize it to the gold/navy palette.
 - **Fixed disclaimer banner on securedatadestruction.html** is intentional but **temporary** — warns visitors that ITAD partnerships are still being built. Remove it once the first partner relationship is confirmed. The burger menu is repositioned to accommodate it while it exists.
@@ -254,58 +253,46 @@ Sitemap submitted ✓. Re-submit after significant content changes (e.g. when re
 
 ---
 
-## Pages In Progress
+## resources.html — Now Live (2026-04-03)
 
-### resources.html
 Four-article informational page covering: network audits, PC cleaning, cable management, and data destruction vs. deletion. Layout uses a two-column sidebar + body grid per article, with a sticky article-nav pill bar below the page header.
 
-**Active class status:** Already correctly applied — `class="active"` on the desktop nav link and `class="mobile-nav-link active"` on the mobile menu link.
+**Nav order (all pages):** Get a Quote · Home · Resources · Services · Audits · Secure Data Destruction
 
-**Fixes applied (2026-04-01):**
+**Visual treatment:** Gold spotlight `::before` on page header. `logo_long_noBG2.webp` as header background (same as services/audits). Article sidebar read-time badges. Article nav pills centered.
 
-1. ~~Missing `<link rel="stylesheet" href="shared.css">`~~ — **Fixed.** Stylesheet link added; `<style>` block stripped down to page-specific CSS only (article layout, sidebar, body, callout, list, divider, cta-band, media query). All nav, footer, button, page-header, reset, and `:root` duplicates removed.
+**Outstanding items:**
 
-2. ~~Encoding issues~~ — **Fixed.** All garbled characters replaced: `—` in meta/header text, `→` in CTA buttons and `::before` bullet content, `·` and `©` in footer.
+1. **`resources.html` page title** — "Resources | Care and Cables" has no geo signal or keyword. Consider something like "PC Cleaning & Network Audit Guides — Scarborough | Care and Cables".
 
-**Remaining before going live:**
+2. **Body text readability — site-wide** — Phase 6, currently shelved. Font sizes and text colors need a case-by-case review across all pages. Use resources.html as the readability baseline. Do not apply blanket changes.
 
-3. **shared.css burger breakpoint** — needs to be raised from `820px` to ~`940px` and nav `gap` trimmed from `32px` to `24px` to accommodate 6 nav items (Resources now added) without squishing. Deferred to Phase 3 of current session.
-
-4. ~~**`resources.html` canonical tag**~~ — **Done (2026-04-03).** `<link rel="canonical" href="https://careandcables.ca/resources.html">` added.
-
-5. **`resources.html` page title** — "Resources | Care and Cables" has no geo signal or keyword. Consider something like "PC Cleaning & Network Audit Guides — Scarborough | Care and Cables" before launch.
-
-6. ~~**Software optimization price**~~ — **Done.** Updated to `$25` in both resources.html article 2 and services.html.
-
-7. **Body text readability — site-wide, case-by-case** — font sizes and text colors across a large portion of the site need review. Text should be slightly larger and darker where readability is lacking. Audit each page and adjust individually; do not apply blanket changes.
-
-**Content verified:**
-- Pricing in article 1 ($225 Home, $400 Baseline, $600 Full Assessment) matches audits.html ✓
-- `services.html#tech-care` and `services.html#cable-care` anchor targets both exist ✓
-- Tone, GTA references, and writing style consistent with rest of site ✓
-- Software optimization add-on in article 2 — **update price from $15 → $25 before publishing.** GTA market for a standalone tune-up runs $49–$99; $25 as an add-on significantly undercuts that while being more defensible than $15. Also update the matching price on services.html if listed there.
-
-**When adding resources.html, these files all need updating:**
-1. ~~`resources.html` — fix shared.css link + encoding issues~~ **Done (2026-04-01)**
-2. ~~`index.html` — add Resources link to desktop nav and mobile menu~~ **Done (2026-04-03)**
-3. ~~`services.html` — add Resources link to desktop nav and mobile menu~~ **Done (2026-04-03)**
-4. ~~`audits.html` — add Resources link to desktop nav and mobile menu~~ **Done (2026-04-03)**
-5. ~~`securedatadestruction.html` — add Resources link to desktop nav and mobile menu~~ **Done (2026-04-03)**
-6. ~~`shared.css` — reduce nav `gap` to `24px` and raise burger breakpoint to `940px`~~ **Done (2026-04-03)**
-7. ~~`sitemap.xml` — add resources.html entry~~ **Done (2026-04-03)**
-
-**Nav order on all pages (once Resources is added):**
-Get a Quote · Home · Resources · Services · Audits · Secure Data Destruction
+**Content notes:**
+- Pricing in article 1 matches audits.html ($225 Home / $400 Baseline / $600 Full Assessment) ✓
+- Software optimization add-on price: $25 ✓ (updated in both resources.html and services.html)
+- "What actually gets tested" section in article 1 — logical layer bullet points completed (2026-04-03)
 
 ---
 
 ## Known Bugs / Structural Issues
 
 - **services.html** — Three stray `</div>` tags before each `</section>` close (one per service section). Invalid HTML that browsers silently correct, but should be cleaned up.
-- ~~**services.html** — Mobile breakpoint was `768px` instead of site-standard `820px`.~~ **Fixed (2026-04-03).**
 - **audits.html line ~687** — `<div class="pricing-tier";>` contains a stray semicolon inside the HTML tag attribute. Browsers tolerate it but it's malformed.
 - **securedatadestruction.html** — The `.fixed-disclaimer` `<div>` is placed after `</footer>` (outside the body content flow). Browsers render it fine since it's fixed-position, but it should be inside `<body>` before `</body>`.
-- **GA4 property ID** — Was incorrect across all pages; corrected by the user on 2026-04-03. All pages now use `G-QXGLSR4QGP` correctly.
+
+---
+
+## Session Changes — 2026-04-03
+
+- **GA4 property ID corrected** — was broken across all pages; fixed by user.
+- **resources.html launched** — canonical added, article nav pills centered, read-time badges added to all four article sidebars, "What actually gets tested" section completed, logo header background and spotlight effect added.
+- **Nav updated site-wide** — Resources added after Home in desktop nav and mobile menu on all five pages.
+- **shared.css nav gap** — `32px` → `24px`.
+- **shared.css burger breakpoint** — `820px` → `1100px` (covers iPad landscape with 6 nav items).
+- **shared.css .page-header** — Uniform height enforced: `padding: 120px 24px`, `min-height: 400px`, flex column centering. securedatadestruction.html override trimmed accordingly.
+- **services.html content breakpoint** — `768px` → `820px` (site standard).
+- **Spotlight effect** — Gold radial gradient `::before` added to services.html and resources.html page headers (matches audits.html). Not added to securedatadestruction.html by design.
+- **sitemap.xml** — resources.html entry added (`lastmod: 2026-04-03`, `priority: 0.7`).
 
 ---
 
