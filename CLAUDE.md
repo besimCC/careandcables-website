@@ -302,7 +302,7 @@ Get a Quote · Home · Resources · Services · Audits · Secure Data Destructio
 ## Known Bugs / Structural Issues
 
 - **services.html** — Three stray `</div>` tags before each `</section>` close (one per service section). Invalid HTML that browsers silently correct, but should be cleaned up.
-- **services.html** — Mobile breakpoint is `768px` instead of the site-standard `820px`. Should be aligned.
+- ~~**services.html** — Mobile breakpoint was `768px` instead of site-standard `820px`.~~ **Fixed (2026-04-03).**
 - **audits.html line ~687** — `<div class="pricing-tier";>` contains a stray semicolon inside the HTML tag attribute. Browsers tolerate it but it's malformed.
 - **securedatadestruction.html** — The `.fixed-disclaimer` `<div>` is placed after `</footer>` (outside the body content flow). Browsers render it fine since it's fixed-position, but it should be inside `<body>` before `</body>`.
 - **GA4 property ID** — Was incorrect across all pages; corrected by the user on 2026-04-03. All pages now use `G-QXGLSR4QGP` correctly.
