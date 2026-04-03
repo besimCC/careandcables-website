@@ -24,6 +24,8 @@
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
 
+  <link rel="canonical" href="https://careandcables.ca/resources.html">
+
   <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700;800;900&family=Barlow:wght@300;400;500;600&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="shared.css" />
 
@@ -44,6 +46,7 @@
       display: flex;
       gap: 10px;
       flex-wrap: wrap;
+      justify-content: center;
     }
 
     .article-pill {
@@ -118,6 +121,22 @@
       text-transform: uppercase;
       color: var(--gold);
       margin-bottom: 12px;
+    }
+
+    .article-read-time {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      padding: 4px 10px;
+      background: rgba(15,35,64,0.05);
+      border: 1px solid rgba(15,35,64,0.12);
+      border-radius: 999px;
+      font-size: 0.68rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin-bottom: 14px;
     }
 
     .article-sidebar h2 {
@@ -371,6 +390,7 @@
         <div class="article-sidebar">
           <div class="article-number">01</div>
           <div class="article-tag">Audits</div>
+          <div class="article-read-time">⏱ 3 min read</div>
           <h2>What a Network Audit <br><em>Actually Involves</em></h2>
           <p class="article-intro">Most people picture someone staring at a screen full of green code. The reality is more boots-on-the-ground than that.</p>
           <a href="audits.html" class="article-cta">See Audit Pricing →</a>
@@ -390,9 +410,21 @@
           <p>The logical layer will let us dive into the more sensitive, and most damaging for malicious parties, parts of your network. We'll NEVER store your sensitive information - anything relevant will stay on an encrypted drive until we deliver the report, at which point it will be removed.</p>
 
           <h3>What actually gets tested</h3>
-          <p>Every network drop gets tested end to end. We're checking: <br>Wiremapping - are all eight conductors connected correctly and in the right order? <br>Continuity - is the signal actually making it from one end to the other? <br>Shield integrity - is the shielding intact and grounded properly?</p>
-          <p>Along with the cable runs, every piece of active hardware gets physically inspected. Switches, routers, access points, patch panels, UPS units. We're checking temperatures, port activity, physical condition, and documenting everything we find - including devices that weren't in your existing documentation, which happens more often than you'd think.</p>
-          <p>With the logical layer, we're checking a lot, some of the most vital checks are: <br>Firmware versions - <br>Spanning Tree Protocol - <br>Security check - <br>Live IP sweep - are there any unknown devices hiding from your DHCP lease table? <br>Wireless strength mapping - are there any deadspots or weak areas?</p>
+          <p>Every network drop gets tested end to end. Physical layer checks on every cable run:</p>
+          <ul class="article-list">
+            <li><strong>Wiremapping</strong> — are all eight conductors connected correctly and in the right order?</li>
+            <li><strong>Continuity</strong> — is the signal actually making it from one end to the other?</li>
+            <li><strong>Shield integrity</strong> — is the shielding intact and grounded properly?</li>
+          </ul>
+          <p>Along with the cable runs, every piece of active hardware gets physically inspected — switches, routers, access points, patch panels, UPS units. We're checking temperatures, port activity, physical condition, and documenting everything we find, including devices that weren't in your existing documentation, which happens more often than you'd think.</p>
+          <p>With a logical layer audit, the most vital checks include:</p>
+          <ul class="article-list">
+            <li><strong>Firmware versions</strong> — every active device cross-referenced for outdated firmware, flagged against known vulnerability histories</li>
+            <li><strong>Spanning Tree Protocol</strong> — STP configuration reviewed for loops, misconfigured root bridges, and topology instability that can cause unexpected outages</li>
+            <li><strong>Security check</strong> — default credentials, exposed management interfaces, open ports, and any devices that don't reconcile with your known inventory</li>
+            <li><strong>Live IP sweep</strong> — active scan cross-referenced against your DHCP lease table to surface rogue or forgotten devices hiding on the network</li>
+            <li><strong>Wireless strength mapping</strong> — coverage plotted across the space to identify dead zones, weak areas, and channel congestion</li>
+          </ul>
           <p><strong>If you're running a business with sensitive data flowing through your network in the GTA, this is the tier worth considering.</strong> <a href="audits.html">See the full breakdown of what's included.</a></p>
 
           <h3>The report is the deliverable</h3>
@@ -414,6 +446,7 @@
         <div class="article-sidebar">
           <div class="article-number">02</div>
           <div class="article-tag">Tech Care</div>
+          <div class="article-read-time">⏱ 2 min read</div>
           <h2>How to Tell if Your PC or console Needs <em>Cleaning</em></h2>
           <p class="article-intro">Your computer doesn't have to be visibly filthy to be struggling. Corroding PCIe slots, thermal throttling from poor or old thermal paste applications, or BIOS misconfigurations can all cause major performance issues.</p>
           <a href="services.html#tech-care" class="article-cta">See Cleaning Services →</a>
@@ -456,6 +489,7 @@
         <div class="article-sidebar">
           <div class="article-number">03</div>
           <div class="article-tag">Cable Care</div>
+          <div class="article-read-time">⏱ 2 min read</div>
           <h2>Cable Management: More Than Just <em>Looking Clean</em></h2>
           <p class="article-intro">A tidy setup isn't vanity. Disorganized cables cause real problems - the longer these problems get ignored, the worse they get.</p>
           <a href="services.html#cable-care" class="article-cta">See Cable Services →</a>
@@ -496,6 +530,7 @@
         <div class="article-sidebar">
           <div class="article-number">04</div>
           <div class="article-tag">Data Destruction</div>
+          <div class="article-read-time">⏱ 2 min read</div>
           <h2>Deletion Isn't <em>Destruction.</em> Here's the Difference.</h2>
           <p class="article-intro">Emptying the recycle bin doesn't do what most people think it does. Neither does a factory reset, most of the time.</p>
           <a href="securedatadestruction.html" class="article-cta">See Data Destruction →</a>

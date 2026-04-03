@@ -269,13 +269,13 @@ Four-article informational page covering: network audits, PC cleaning, cable man
 
 **Remaining before going live:**
 
-3. **shared.css burger breakpoint** — needs to be raised from `820px` (and nav `gap` trimmed) to accommodate 5 nav items without squishing. Deferred — being handled separately once content is finalized. resources.html media query is already at `820px` and will inherit the shared.css change automatically.
+3. **shared.css burger breakpoint** — needs to be raised from `820px` to ~`940px` and nav `gap` trimmed from `32px` to `24px` to accommodate 6 nav items (Resources now added) without squishing. Deferred to Phase 3 of current session.
 
-4. **`resources.html` canonical tag** — add `<link rel="canonical" href="https://careandcables.ca/resources.html">` before launch.
+4. ~~**`resources.html` canonical tag**~~ — **Done (2026-04-03).** `<link rel="canonical" href="https://careandcables.ca/resources.html">` added.
 
 5. **`resources.html` page title** — "Resources | Care and Cables" has no geo signal or keyword. Consider something like "PC Cleaning & Network Audit Guides — Scarborough | Care and Cables" before launch.
 
-6. **Software optimization price** — update from `$15` → `$25` in article 2 body text before publishing. Also check services.html for a matching entry and update there too.
+6. ~~**Software optimization price**~~ — **Done.** Updated to `$25` in both resources.html article 2 and services.html.
 
 7. **Body text readability — site-wide, case-by-case** — font sizes and text colors across a large portion of the site need review. Text should be slightly larger and darker where readability is lacking. Audit each page and adjust individually; do not apply blanket changes.
 
@@ -291,11 +291,21 @@ Four-article informational page covering: network audits, PC cleaning, cable man
 3. `services.html` — add Resources link to desktop nav and mobile menu
 4. `audits.html` — add Resources link to desktop nav and mobile menu
 5. `securedatadestruction.html` — add Resources link to desktop nav and mobile menu
-6. `shared.css` — reduce nav `gap` (currently `32px`) and raise burger breakpoint (currently `820px`) to prevent squishing; target breakpoint likely `920px`–`960px`
+6. `shared.css` — reduce nav `gap` (currently `32px`) to `24px` and raise burger breakpoint from `820px` to `940px` to prevent squishing with 6 items
 7. `sitemap.xml` — add resources.html entry
 
 **Nav order on all pages (once Resources is added):**
-Get a Quote · Home · Services · Audits · Secure Data Destruction · Resources
+Get a Quote · Home · Resources · Services · Audits · Secure Data Destruction
+
+---
+
+## Known Bugs / Structural Issues
+
+- **services.html** — Three stray `</div>` tags before each `</section>` close (one per service section). Invalid HTML that browsers silently correct, but should be cleaned up.
+- **services.html** — Mobile breakpoint is `768px` instead of the site-standard `820px`. Should be aligned.
+- **audits.html line ~687** — `<div class="pricing-tier";>` contains a stray semicolon inside the HTML tag attribute. Browsers tolerate it but it's malformed.
+- **securedatadestruction.html** — The `.fixed-disclaimer` `<div>` is placed after `</footer>` (outside the body content flow). Browsers render it fine since it's fixed-position, but it should be inside `<body>` before `</body>`.
+- **GA4 property ID** — Was incorrect across all pages; corrected by the user on 2026-04-03. All pages now use `G-QXGLSR4QGP` correctly.
 
 ---
 
