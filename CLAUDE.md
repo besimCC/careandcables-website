@@ -40,7 +40,7 @@ deployment/
 ├── services.html                    ← Services catalog with pricing
 ├── audits.html                      ← Network audit tiers and process
 ├── securedatadestruction.html       ← ITAD / data destruction services
-├── resources.html                   ← IN PROGRESS — informational deep-dive on main services (not yet live)
+├── resources.html                   ← Informational deep-dive on main services — now live (2026-04-03)
 ├── shared.css                       ← Global stylesheet (used by all pages)
 ├── robots.txt                       ← Points to sitemap
 ├── sitemap.xml                      ← XML sitemap for SEO
@@ -287,12 +287,12 @@ Four-article informational page covering: network audits, PC cleaning, cable man
 
 **When adding resources.html, these files all need updating:**
 1. ~~`resources.html` — fix shared.css link + encoding issues~~ **Done (2026-04-01)**
-2. `index.html` — add Resources link to desktop nav and mobile menu
-3. `services.html` — add Resources link to desktop nav and mobile menu
-4. `audits.html` — add Resources link to desktop nav and mobile menu
-5. `securedatadestruction.html` — add Resources link to desktop nav and mobile menu
-6. `shared.css` — reduce nav `gap` (currently `32px`) to `24px` and raise burger breakpoint from `820px` to `940px` to prevent squishing with 6 items
-7. `sitemap.xml` — add resources.html entry
+2. ~~`index.html` — add Resources link to desktop nav and mobile menu~~ **Done (2026-04-03)**
+3. ~~`services.html` — add Resources link to desktop nav and mobile menu~~ **Done (2026-04-03)**
+4. ~~`audits.html` — add Resources link to desktop nav and mobile menu~~ **Done (2026-04-03)**
+5. ~~`securedatadestruction.html` — add Resources link to desktop nav and mobile menu~~ **Done (2026-04-03)**
+6. ~~`shared.css` — reduce nav `gap` to `24px` and raise burger breakpoint to `940px`~~ **Done (2026-04-03)**
+7. ~~`sitemap.xml` — add resources.html entry~~ **Done (2026-04-03)**
 
 **Nav order on all pages (once Resources is added):**
 Get a Quote · Home · Resources · Services · Audits · Secure Data Destruction
