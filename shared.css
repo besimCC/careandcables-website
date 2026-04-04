@@ -61,7 +61,7 @@ nav {
   right: 0;
   z-index: 100;
   background: var(--blue-deep);
-  border-bottom: 2px solid var(--gold);
+  border-bottom: 5px solid var(--gold);
   padding: 0 24px;
 }
 
