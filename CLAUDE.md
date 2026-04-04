@@ -265,7 +265,7 @@ Four-article informational page covering: network audits, PC cleaning, cable man
 
 1. **`resources.html` page title** — "Resources | Care and Cables" has no geo signal or keyword. Consider something like "PC Cleaning & Network Audit Guides — Scarborough | Care and Cables".
 
-2. **Body text readability — site-wide** — Phase 6, currently shelved. Font sizes and text colors need a case-by-case review across all pages. Use resources.html as the readability baseline. Do not apply blanket changes.
+2. **Body text readability — site-wide** — Pass completed 2026-04-04. `--text-dark: #111111` applied to services.html, audits.html, and securedatadestruction.html for stronger contrast on light backgrounds. resources.html is missing this override but renders dark anyway (see Known Bugs). index.html left as-is — dark backgrounds dominate; may lighten text slightly in a future pass. Use resources.html as the readability baseline for future work. Do not apply blanket changes.
 
 **Content notes:**
 - Pricing in article 1 matches audits.html ($225 Home / $400 Baseline / $600 Full Assessment) ✓
@@ -279,6 +279,22 @@ Four-article informational page covering: network audits, PC cleaning, cable man
 - **services.html** — Three stray `</div>` tags before each `</section>` close (one per service section). Invalid HTML that browsers silently correct, but should be cleaned up.
 - **audits.html line ~687** — `<div class="pricing-tier";>` contains a stray semicolon inside the HTML tag attribute. Browsers tolerate it but it's malformed.
 - **securedatadestruction.html** — The `.fixed-disclaimer` `<div>` is placed after `</footer>` (outside the body content flow). Browsers render it fine since it's fixed-position, but it should be inside `<body>` before `</body>`.
+- **resources.html** — Missing `--text-dark: #111111` override (all other content pages have it). Article body text, callouts, and list items use `var(--text-dark)` and would be `#2c3e4e` instead of `#111111`. Text currently appears dark due to a separate CSS interaction, so low urgency — but should be made consistent.
+- **index.html hero divider** — The skewed white `::before` divider at the bottom of the hero reveals a sliver of blue on very wide screens. Fix is to move it down ~5px (`bottom: -40px` → `bottom: -45px` in `.hero::before`). See Future Additions #3.
+
+---
+
+## Future Additions / Todo
+
+1. **Booking app integration (book.careandcables.ca)** — When the booking app is polished and live: all clickable priced services on services.html and the audit "Request a Quote" CTA → link to `book.careandcables.ca`. All other "Request a Quote" / "by quote" links → `index.html?service=Quoting#contact`.
+
+2. **Simplify contact form dropdown** *(depends on #1)* — After booking links are in place, reduce the service dropdown to two options only: 'Quoting' and 'Questions and/or Support'.
+
+3. **index.html hero divider** — The skewed white `::before` at the bottom of the hero reveals a sliver of blue on wide screens. Move it down ~5px: `bottom: -40px` → `bottom: -45px` in `.hero::before`. No other changes needed.
+
+4. **resources.html "Go Back Home" pill** — Add a small gold eyebrow pill in the page header linking to `index.html`, labelled "Go Back Home". Match the `.eyebrow-pill` style from services.html.
+
+5. **index.html values pillars — scale up** — Make pillar icons (`.pillar-icon`) and pillar text (`.pillar-text`) bigger. Ensure the resources.html link within the pillar is centered.
 
 ---
 
@@ -293,6 +309,13 @@ Four-article informational page covering: network audits, PC cleaning, cable man
 - **services.html content breakpoint** — `768px` → `820px` (site standard).
 - **Spotlight effect** — Gold radial gradient `::before` added to services.html and resources.html page headers (matches audits.html). Not added to securedatadestruction.html by design.
 - **sitemap.xml** — resources.html entry added (`lastmod: 2026-04-03`, `priority: 0.7`).
+
+---
+
+## Session Changes — 2026-04-04
+
+- **Readability pass** — `--text-dark: #111111` applied via per-page `:root` override to services.html, audits.html, and securedatadestruction.html. resources.html and index.html left as-is (see Known Bugs).
+- **CLAUDE.md updated** — Readability status recorded; Future Additions/Todo section added; new known bugs documented for resources.html `--text-dark` and index.html hero divider.
 
 ---
 
